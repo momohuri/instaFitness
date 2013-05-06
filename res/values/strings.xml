@@ -4,5 +4,7 @@
     <string name="app_name">InstaFitness</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_workout_list">WorkoutList</string>
+    <string name="title_activity_workout">Workout</string>
 
 </resources>
