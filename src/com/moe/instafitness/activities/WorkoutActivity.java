@@ -1,4 +1,10 @@
-package com.moe.instafitness;
+package com.moe.instafitness.activities;
+
+import com.moe.instafitness.R;
+import com.moe.instafitness.R.drawable;
+import com.moe.instafitness.R.id;
+import com.moe.instafitness.R.layout;
+import com.moe.instafitness.R.menu;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -12,7 +18,7 @@ import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Workout extends Activity {
+public class WorkoutActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

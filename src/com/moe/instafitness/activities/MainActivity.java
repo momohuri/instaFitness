@@ -1,5 +1,10 @@
-package com.moe.instafitness;
+package com.moe.instafitness.activities;
 
+
+import com.moe.instafitness.R;
+import com.moe.instafitness.R.id;
+import com.moe.instafitness.R.layout;
+import com.moe.instafitness.R.menu;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -18,7 +23,7 @@ public class MainActivity extends Activity {
 		final Button button = (Button) findViewById(R.id.button1);             
         button.setOnClickListener(new View.OnClickListener() {        	
             public void onClick(View v) {     
-            	Intent intent = new Intent(getBaseContext(), WorkoutList.class);
+            	Intent intent = new Intent(getBaseContext(), WorkoutListActivity.class);
             	intent.putExtra("extra","gym");
             	startActivity(intent);            	
             }

@@ -1,4 +1,4 @@
-package com.moe.instafitness;
+package com.moe.instafitness.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

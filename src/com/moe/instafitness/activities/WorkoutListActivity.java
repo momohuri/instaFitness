@@ -1,7 +1,13 @@
-package com.moe.instafitness;
+package com.moe.instafitness.activities;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import com.moe.instafitness.R;
+import com.moe.instafitness.R.drawable;
+import com.moe.instafitness.R.id;
+import com.moe.instafitness.R.layout;
+import com.moe.instafitness.R.menu;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -16,7 +22,7 @@ import android.widget.SimpleAdapter;
 import android.widget.AdapterView.OnItemClickListener;
 
 
-public class WorkoutList extends Activity {
+public class WorkoutListActivity extends Activity {
 	private ListView maListViewPerso;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +51,7 @@ public class WorkoutList extends Activity {
             	public void onItemClick(AdapterView<?> a, View v, int position, long id) {   			
            		HashMap<String, String> map = (HashMap<String, String>) maListViewPerso.getItemAtPosition(position);
           		
-           		Intent intent = new Intent(getBaseContext(), Workout.class);
+           		Intent intent = new Intent(getBaseContext(), WorkoutActivity.class);
             	intent.putExtra("extra",map.get("titre"));
             	startActivity(intent);    
            	
