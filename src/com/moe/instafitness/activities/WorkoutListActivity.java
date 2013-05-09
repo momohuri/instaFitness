@@ -4,16 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.moe.instafitness.R;
-import com.moe.instafitness.R.drawable;
-import com.moe.instafitness.R.id;
-import com.moe.instafitness.R.layout;
-import com.moe.instafitness.R.menu;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;

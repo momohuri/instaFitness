@@ -30,6 +30,11 @@
             android:name="com.moe.instafitness.activities.WorkoutActivity"
             android:label="@string/title_activity_workout" >
         </activity>
+        
+        <provider 
+            android:name=".database.InstaFitnessProvider"
+            android:authorities="com.moe.instafitness.database.InstaFitnessProvider" >
+        </provider>
     </application>
 
 </manifest>

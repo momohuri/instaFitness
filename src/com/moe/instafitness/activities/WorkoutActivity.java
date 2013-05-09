@@ -1,10 +1,6 @@
 package com.moe.instafitness.activities;
 
 import com.moe.instafitness.R;
-import com.moe.instafitness.R.drawable;
-import com.moe.instafitness.R.id;
-import com.moe.instafitness.R.layout;
-import com.moe.instafitness.R.menu;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -13,7 +9,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;

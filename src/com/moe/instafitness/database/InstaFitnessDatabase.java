@@ -1,5 +1,12 @@
 package com.moe.instafitness.database;
 
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.moe.instafitness.libraries.CSVReader;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -17,13 +24,14 @@ public class InstaFitnessDatabase {
 	private static final int DATABASE_VERSION = 1;
 	
 	private final InstaFitnessOpenHelper mDatabaseOpenHelper;
-	
+
 	/**
      * Constructor
      * @param context The Context within which to work, used to create the DB
      */
     public InstaFitnessDatabase(Context context) {
-        mDatabaseOpenHelper = new InstaFitnessOpenHelper(context);
+    	mDatabaseOpenHelper = new InstaFitnessOpenHelper(context);
+    	mDatabaseOpenHelper.loadCSV();
     }
     
     /**
@@ -36,7 +44,7 @@ public class InstaFitnessDatabase {
         
         private static final String[] DATABASE_TABLES_CREATE = {
 	        "CREATE TABLE " + WORKOUT_TABLE_NAME + " (" +
-	        "id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL UNIQUE , " +
+	        "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , " +
 	        "name TEXT, " +
 	        "description TEXT, " +
 	        "icon TEXT, " +
@@ -44,36 +52,36 @@ public class InstaFitnessDatabase {
 	        "time INTEGER, " +
 	        "sets INTEGER, " +
 	        "type TEXT, " +
-	        "material_needed INTEGER );",
+	        "material_needed INTEGER);",
 	        
 	        "CREATE TABLE " + TYPE_TABLE_NAME + " (" +
-			"id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , " +
+			"id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , " +
 			"muscle TEXT);",
 			
-			"CREATE TABLE " + WORKOUT_TABLE_NAME + TYPE_TABLE_NAME + " (" +
-			"id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , " +
-			"id_workout INTEGER  AUTOINCREMENT  NOT NULL , " +
-			"id_type INTEGER  AUTOINCREMENT  NOT NULL);",
+			"CREATE TABLE " + WORKOUT_TABLE_NAME + "_" + TYPE_TABLE_NAME + " (" +
+			"id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , " +
+			"id_workout INTEGER NOT NULL, " +
+			"id_type INTEGER NOT NULL);",
 			
 			"CREATE TABLE " + PICTURE_TABLE_NAME + " (" +
-	        "id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL UNIQUE , " +
-	        "id_workout INTEGER  AUTOINCREMENT  NOT NULL , " +
+	        "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , " +
+	        "id_workout INTEGER NOT NULL, " +
 	        "path TEXT);", 
 	        
 	        "CREATE TABLE " + DIFFICULTY_TABLE_NAME + " (" +
-	        "id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL UNIQUE , " +
-	        "id_workout INTEGER  AUTOINCREMENT  NOT NULL , " +
+	        "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , " +
+	        "id_workout INTEGER NOT NULL, " +
 	        "note INTEGER, " +
 	        "timestamp DATETIME);", 
 	        
 	        "CREATE TABLE " + PERSONAL_INFO_TABLE_NAME + " (" +
-	        "id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL UNIQUE , " +
+	        "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , " +
 	        "name TEXT, " +
 	        "surname TEXT, " +
 	        "age INTEGER, " +
 	        "objectif_date DATETIME, " +
 	        "weight FLOAT, " +
-	        "how_many_time_week INTEGER );"
+	        "how_many_time_week INTEGER);"
 		};
     	
     	InstaFitnessOpenHelper(Context context) {
@@ -86,8 +94,27 @@ public class InstaFitnessDatabase {
 			mDatabase = db;
 			for(String i : DATABASE_TABLES_CREATE) {
 				 mDatabase.execSQL(i);
-			}			
+			}
 		}
+		
+		private void loadCSV() {
+			String next[] = {};
+	        List<String[]> list = new ArrayList<String[]>();
+
+	        try {
+	            CSVReader reader = new CSVReader(new InputStreamReader(mHelperContext.getAssets().open("test.csv")));
+	            for(;;) {
+	                next = reader.readNext();
+	                if(next != null) {
+	                    list.add(next);
+	                } else {
+	                    break;
+	                }
+	            }
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+        }
 
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

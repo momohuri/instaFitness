@@ -1,10 +1,7 @@
 package com.moe.instafitness.activities;
 
-
 import com.moe.instafitness.R;
-import com.moe.instafitness.R.id;
-import com.moe.instafitness.R.layout;
-import com.moe.instafitness.R.menu;
+import com.moe.instafitness.database.InstaFitnessDatabase;
 
 import android.os.Bundle;
 import android.app.Activity;
