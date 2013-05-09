@@ -33,7 +33,7 @@ public class WorkoutListActivity extends Activity {
 	        ArrayList<HashMap<String, String>> listItem = new ArrayList<HashMap<String, String>>();
 	        HashMap<String, String> map;
 	        map = new HashMap<String, String>();
-	  	  map.put("titre","hello");
+	  	  map.put("titre","mon titre de liste");
           map.put("description", "Editeur de texte");
           map.put("img", String.valueOf(R.drawable.ic_launcher));
           listItem.add(map);
