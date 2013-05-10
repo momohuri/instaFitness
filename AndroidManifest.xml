@@ -3,7 +3,8 @@
     package="com.moe.instafitness"
     android:versionCode="1"
     android:versionName="1.0" >
-    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -30,6 +31,10 @@
         <activity
             android:name="com.moe.instafitness.activities.WorkoutActivity"
             android:label="@string/title_activity_workout" >
+        </activity>
+        <activity
+            android:name="com.moe.instafitness.activities.ProfileActivity"
+            android:label="@string/title_activity_profile" >
         </activity>
     </application>
 

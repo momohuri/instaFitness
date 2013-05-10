@@ -20,17 +20,24 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		
+		haveProfile();
+		
 		final Button button = (Button) findViewById(R.id.button1);             
         button.setOnClickListener(new View.OnClickListener() {        	
             public void onClick(View v) {     
             	Intent intent = new Intent(getBaseContext(), WorkoutListActivity.class);
             	intent.putExtra("extra","gym");
             	startActivity(intent);            	
-            }
+            }           
         });
-		
-		
 	}
+	
+	private boolean haveProfile() {  
+		Intent intent = new Intent(getBaseContext(), ProfileActivity.class);
+		startActivity(intent);
+	    return true;
+	    }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
