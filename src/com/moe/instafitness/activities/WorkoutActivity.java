@@ -24,12 +24,11 @@ import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class WorkoutActivity extends Activity {
 	 
 	
-
-	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -43,6 +42,13 @@ public class WorkoutActivity extends Activity {
 		Bundle extra = getIntent().getExtras();
 		final TextView text = (TextView) findViewById(R.id.textView1);   		
 		 text.setText(extra.getString("extra"));
+		 if(extra.get("firstTest") != null){
+			Toast toast = Toast.makeText(getBaseContext(), "first test", Toast.LENGTH_SHORT);
+			 toast.show();
+		 }else{
+			 extra.getString("exerciseId");
+			 //get exercsise in db
+		 }
 
 		 @SuppressWarnings("deprecation")
 		Gallery ga = (Gallery)findViewById(R.id.gallery1);
