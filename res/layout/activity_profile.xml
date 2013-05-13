@@ -25,14 +25,16 @@
         android:text="Whats your name?" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/finish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/textView3"
-        android:text="I am done" />
+        android:visibility="invisible"
+        android:text="Let's go to the test" />
     
         <RadioGroup
+        android:id="@+id/objectif"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView3"
@@ -58,15 +60,6 @@
 	        android:text="Loose some weigth" />
     
     </RadioGroup>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/radioButton3"
-        android:layout_below="@+id/radioButton3"
-        android:layout_marginTop="48dp"
-        android:text="" />
 
     <TextView
         android:id="@+id/textView3"
@@ -99,6 +92,7 @@
     </EditText>
 
     <RadioGroup
+        android:id="@+id/sexe"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView3"
@@ -118,5 +112,15 @@
             android:layout_height="wrap_content"
             android:text="M" />
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/objectif"
+        android:layout_below="@+id/objectif"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="45dp"
+        android:text="" />
 
 </RelativeLayout>
