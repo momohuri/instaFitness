@@ -12,8 +12,18 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.view.View.OnClickListener;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnClickListener {
+
+    Button buttonAtHome;
+    Button buttonAtGym;
+    Button buttonListEx;
+    Button buttonProgress;
+
+
+
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,16 +31,17 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		
-		haveProfile();
-		
-		final Button button = (Button) findViewById(R.id.button1);             
-        button.setOnClickListener(new View.OnClickListener() {        	
-            public void onClick(View v) {     
-            	Intent intent = new Intent(getBaseContext(), WorkoutListActivity.class);
-            	intent.putExtra("extra","gym");
-            	startActivity(intent);            	
-            }           
-        });
+		this.haveProfile();
+
+        this.buttonListEx = (Button) this.findViewById(R.id.buttonListEx);
+        this.buttonAtGym = (Button) this.findViewById(R.id.buttonAtGym);
+        this.buttonAtHome = (Button) this.findViewById(R.id.buttonAtHome);
+        this.buttonProgress = (Button) this.findViewById(R.id.buttonProgress);
+
+        this.buttonListEx.setOnClickListener(this);
+        this.buttonProgress.setOnClickListener(this);
+        this.buttonAtHome.setOnClickListener(this);
+        this.buttonAtGym.setOnClickListener(this);
 	}
 	
 	private boolean haveProfile() {  
@@ -45,5 +56,23 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case id.buttonListEx:
 
+                Intent intent = new Intent(getBaseContext(), WorkoutListActivity.class);
+                intent.putExtra("extra","gym");
+                startActivity(intent);
+                break;
+            case id.buttonAtHome:
+                    finish();
+                break;
+            case id.buttonAtGym:
+                break;
+
+            case id.buttonProgress:
+                break;
+        }
+    }
 }
