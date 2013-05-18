@@ -37,6 +37,8 @@
             android:name="com.moe.instafitness.activities.ProfileActivity"
             android:label="@string/title_activity_profile" >
         </activity>
+        <activity android:name=".activities.History"/>
+        <activity android:name=".activities.HistoryActivity"/>
     </application>
 
 </manifest>

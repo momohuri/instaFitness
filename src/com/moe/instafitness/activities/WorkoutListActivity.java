@@ -58,8 +58,8 @@ public class WorkoutListActivity extends ListActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-//                adapter = (WorkoutAdapter) listViewWorkout.getAdapter();
-//                adapter.getFilter().filter(s.toString());
+                adapter = (WorkoutAdapter) listViewWorkout.getAdapter();
+               adapter.getFilter().filter(s.toString());
             }
         });
 	}

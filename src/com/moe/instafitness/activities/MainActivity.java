@@ -25,7 +25,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_main);
 		
 		
-		this.haveProfile();
+		//this.haveProfile();
 
         this.buttonListEx = (Button) this.findViewById(R.id.buttonListEx);
         this.buttonAtGym = (Button) this.findViewById(R.id.buttonAtGym);
