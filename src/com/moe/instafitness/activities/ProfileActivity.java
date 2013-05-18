@@ -1,10 +1,8 @@
 package com.moe.instafitness.activities;
 
-import com.moe.instafitness.R;
-
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,7 +10,7 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
-import android.widget.Toast;
+import com.moe.instafitness.R;
 
 public class ProfileActivity extends Activity {
 
@@ -73,7 +71,7 @@ public class ProfileActivity extends Activity {
 			public void onClick(View v) {
 				//TODO info in db
 				Intent intent= (Intent) new Intent(getBaseContext(), WorkoutActivity.class);
-				intent.putExtra("firstTest", true);
+				intent.putExtra("firstTest", 1);
 				startActivity(intent);
 			}
 		});

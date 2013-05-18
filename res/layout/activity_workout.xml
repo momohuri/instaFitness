@@ -33,7 +33,7 @@
         android:text="0" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/startCountdown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/textView1"
@@ -41,7 +41,7 @@
         android:text="Start" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/toEasy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button1"
@@ -51,20 +51,20 @@
         android:text="to easy" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/Normal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button2"
-        android:layout_alignBottom="@+id/button2"
+        android:layout_alignBaseline="@+id/toEasy"
+        android:layout_alignBottom="@+id/toEasy"
         android:layout_centerHorizontal="true"
         android:visibility="invisible"
         android:text="perfect for me" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/toHard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button3"
+        android:layout_alignBottom="@+id/Normal"
         android:layout_alignRight="@+id/gallery1"
         android:visibility="invisible"
         android:text="to hard" />

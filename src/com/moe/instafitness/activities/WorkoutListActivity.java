@@ -1,28 +1,20 @@
 package com.moe.instafitness.activities;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import com.moe.instafitness.R;
-import com.moe.instafitness.R.drawable;
-import com.moe.instafitness.R.id;
-import com.moe.instafitness.R.layout;
-import com.moe.instafitness.R.menu;
-
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.AdapterView.OnItemClickListener;
-import com.moe.instafitness.entity.WorkoutClass;
-import com.moe.instafitness.adapter.WorkoutAdapter;
-import android.app.ListActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ListView;
+import com.moe.instafitness.R;
+import com.moe.instafitness.R.id;
+import com.moe.instafitness.adapter.WorkoutAdapter;
+import com.moe.instafitness.entity.WorkoutClass;
+
+import java.util.ArrayList;
 public class WorkoutListActivity extends ListActivity {
 	private ListView listViewWorkout;
     ArrayList<WorkoutClass> myWorkout;
@@ -66,9 +58,8 @@ public class WorkoutListActivity extends ListActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                adapter = (WorkoutAdapter) listViewWorkout.getAdapter();
-                
-                adapter.getFilter().filter(s.toString());
+//                adapter = (WorkoutAdapter) listViewWorkout.getAdapter();
+//                adapter.getFilter().filter(s.toString());
             }
         });
 	}

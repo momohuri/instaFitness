@@ -1,18 +1,15 @@
 package com.moe.instafitness.activities;
 
 
-import com.moe.instafitness.R;
-import com.moe.instafitness.R.id;
-import com.moe.instafitness.R.layout;
-import com.moe.instafitness.R.menu;
-
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 import android.view.View.OnClickListener;
+import android.widget.Button;
+import com.moe.instafitness.R;
+import com.moe.instafitness.R.id;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -20,9 +17,6 @@ public class MainActivity extends Activity implements OnClickListener {
     Button buttonAtGym;
     Button buttonListEx;
     Button buttonProgress;
-
-
-
 
 
 	@Override
@@ -58,19 +52,21 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
     @Override
     public void onClick(View v) {
+
+        Intent intent = new Intent(getBaseContext(), WorkoutListActivity.class);
+
         switch (v.getId()) {
             case id.buttonListEx:
-
-                Intent intent = new Intent(getBaseContext(), WorkoutListActivity.class);
-                intent.putExtra("extra","gym");
                 startActivity(intent);
                 break;
             case id.buttonAtHome:
-                    finish();
+                intent.putExtra("place","home");
+                startActivity(intent);
                 break;
             case id.buttonAtGym:
+                intent.putExtra("place","gym");
+                startActivity(intent);
                 break;
-
             case id.buttonProgress:
                 break;
         }
