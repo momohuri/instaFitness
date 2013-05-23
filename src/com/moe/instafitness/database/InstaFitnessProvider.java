@@ -1,6 +1,5 @@
 package com.moe.instafitness.database;
 
-
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.database.Cursor;
