@@ -44,7 +44,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		Intent intent = new Intent(getBaseContext(), ProfileActivity.class);
 		startActivity(intent);
 	    return true;
-	    }
+    }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

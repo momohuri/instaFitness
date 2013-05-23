@@ -19,7 +19,7 @@ public class WorkoutListActivity extends ListActivity {
 	private ListView listViewWorkout;
     ArrayList<WorkoutClass> myWorkout;
     WorkoutAdapter adapter;
-   EditText editTextSearch;
+	EditText editTextSearch;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
