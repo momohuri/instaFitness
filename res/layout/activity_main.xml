@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Show me all &#10; excersice"
-        android:drawableTop="@drawable/allworkout"
+        android:drawableTop="@drawable/all_workout"
         android:background="@android:color/transparent"
         android:layout_above="@+id/imageView" android:layout_alignRight="@+id/buttonAtHome"
         android:layout_marginBottom="60dp" android:layout_marginLeft="35dp"/>
