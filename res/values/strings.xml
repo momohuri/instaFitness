@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_workout_list">WorkoutList</string>
     <string name="title_activity_workout">Workout</string>
+    <string name="title_activity_profile">ProfileActivity</string>
 
 </resources>

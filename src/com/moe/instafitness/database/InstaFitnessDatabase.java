@@ -59,7 +59,7 @@ public class InstaFitnessDatabase {
         
         private static final String[] DATABASE_TABLES_CREATE = {
 	        "CREATE TABLE " + WORKOUT_TABLE_NAME + " (" +
-	        "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , " +
+	        "id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL UNIQUE , " +
 	        "name TEXT, " +
 	        "description TEXT, " +
 	        "icon TEXT, " +

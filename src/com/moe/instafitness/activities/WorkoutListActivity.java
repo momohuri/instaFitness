@@ -1,58 +1,76 @@
 package com.moe.instafitness.activities;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import com.moe.instafitness.R;
-
-import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.View;
-import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.AdapterView.OnItemClickListener;
+import com.moe.instafitness.R;
+import com.moe.instafitness.R.id;
+import com.moe.instafitness.adapter.WorkoutAdapter;
+import com.moe.instafitness.entity.WorkoutClass;
 
+import java.util.ArrayList;
+public class WorkoutListActivity extends ListActivity {
+	private ListView listViewWorkout;
+    ArrayList<WorkoutClass> myWorkout;
+    WorkoutAdapter adapter;
+   EditText editTextSearch;
 
-public class WorkoutListActivity extends Activity {
-	private ListView maListViewPerso;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.workout_list);
-		
-	      maListViewPerso = (ListView) findViewById(R.id.listviewperso);
-	        ArrayList<HashMap<String, String>> listItem = new ArrayList<HashMap<String, String>>();
-	        HashMap<String, String> map;
-	        map = new HashMap<String, String>();
-	  	  map.put("titre","mon titre de liste");
-          map.put("description", "Editeur de texte");
-          map.put("img", String.valueOf(R.drawable.ic_launcher));
-          listItem.add(map);
-          SimpleAdapter mSchedule = new SimpleAdapter (this.getBaseContext(), listItem, R.layout.list,
-                  new String[] {"img", "titre", "description"}, new int[] {R.id.img, R.id.titre, R.id.description});
-    
-           //On attribut à notre listView l'adapter que l'on vient de créer
-           maListViewPerso.setAdapter(mSchedule);
-           
+        this.listViewWorkout = (ListView) findViewById(android.R.id.list);
+        this.myWorkout = new ArrayList<WorkoutClass>();
+        this.editTextSearch = (EditText) findViewById(id.editTextSearch);
+        /// test ///
+        WorkoutClass test = new WorkoutClass();
+        WorkoutClass test2 = new WorkoutClass();
+        test.setTitle("salope");
+        test.setDescription("ok o k ok  o k k ok k k o k ");
+        test2.setTitle("tetetetet");
+        test2.setDescription("tetetetete ");
+        test2.setImageUI(getResources().getDrawable(R.drawable.ic_launcher));
+        test.setImageUI(getResources().getDrawable(R.drawable.ic_launcher));
+        myWorkout.add(test);
+        myWorkout.add(test2);
+        /// end test ///
 
-//           //Enfin on met un écouteur d'évènement sur notre listView
-           maListViewPerso.setOnItemClickListener(new OnItemClickListener() {
-   			@Override
-   			@SuppressWarnings("unchecked")
-            	public void onItemClick(AdapterView<?> a, View v, int position, long id) {   			
-           		HashMap<String, String> map = (HashMap<String, String>) maListViewPerso.getItemAtPosition(position);
-          		
-           		Intent intent = new Intent(getBaseContext(), WorkoutActivity.class);
-            	intent.putExtra("extra",map.get("titre"));
-            	startActivity(intent);    
-           	
-           	}
-            });
+
+       this.adapter = new WorkoutAdapter(this, android.R.id.list, this.myWorkout);
+
+        this.setListAdapter(adapter);
+        this.listViewWorkout.setTextFilterEnabled(true);
+
+        editTextSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                adapter = (WorkoutAdapter) listViewWorkout.getAdapter();
+               adapter.getFilter().filter(s.toString());
+            }
+        });
 	}
 
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        WorkoutClass workout = (WorkoutClass) l.getItemAtPosition(position);
+        Intent intent = new Intent(getBaseContext(), WorkoutActivity.class);
+        intent.putExtra("extra",workout.getTitle());
+        this.startActivity(intent);
+    }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

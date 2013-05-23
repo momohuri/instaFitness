@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true" >
-        <shape>
-            <solid
-                android:color="#343434" />
-            <stroke
-                android:width="1dp"
-                android:color="#171717" />
-            <corners
-                android:radius="3dp" />
-            <padding
-                android:left="10dp"
-                android:top="10dp"
-                android:right="10dp"
-                android:bottom="10dp" />
-        </shape>
-    </item>
-    <item>
+     <item>
         <shape>
             <gradient
                 android:startColor="#343434"
@@ -35,3 +19,4 @@
         </shape>
     </item>
 </selector>
+

@@ -1,105 +1,85 @@
 package com.moe.instafitness.activities;
 
-import com.moe.instafitness.R;
-
-import android.media.MediaPlayer;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.Gallery;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.*;
+import com.moe.instafitness.R;
+import com.moe.instafitness.R.id;
 
-public class WorkoutActivity extends Activity {
-	 
-	
+public class WorkoutActivity extends Activity implements View.OnClickListener {
+	 Button startCountdown;
+     Button toEasy;
+     Button Normal;
+     Button toHard;
+     CountDownTimer  myTimmer;
 
-	@SuppressWarnings("deprecation")
-	@Override
+
+
+
+    @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_workout);
 		
-		final Button button1 = (Button) findViewById(R.id.button1);
-		final Button button2 = (Button) findViewById(R.id.button2);
-		final Button button3 = (Button) findViewById(R.id.button3);
-		final Button button4 = (Button) findViewById(R.id.button4);
+	    startCountdown = (Button) findViewById(R.id.startCountdown);
+		toEasy = (Button) findViewById(id.toEasy);
+		Normal = (Button) findViewById(id.Normal);
+		toHard = (Button) findViewById(id.toHard);
+
+        startCountdown.setOnClickListener(this);
+        toEasy.setOnClickListener(this);
+        Normal.setOnClickListener(this);
+        toHard.setOnClickListener(this);
 		
 		Bundle extra = getIntent().getExtras();
 		final TextView text = (TextView) findViewById(R.id.textView1);   		
 		 text.setText(extra.getString("extra"));
+		 if(extra.get("firstTest") != null){
+			Toast toast = Toast.makeText(getBaseContext(), extra.get("firstTest")+" test", Toast.LENGTH_SHORT);
+			 toast.show();
+		 }else{
+			 extra.getString("exerciseId");
+			 //get exercsise in db
+		 }
+
+        myTimmer = new CountDownTimer(3000, 1000) {
+            TextView mTextField = (TextView) findViewById(id.textView2);
+
+            public void onTick(long millisUntilFinished) {
+                 mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
+            }
+
+            public void onFinish() {
+                toEasy.setVisibility(0);
+                Normal.setVisibility(0);
+                toHard.setVisibility(0);
+
+                // mTextField.setText("done!");
+                Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                v.vibrate(1000);
+                Uri uri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), uri);
+                r.play();
+
+            }
+        };
 
 		 @SuppressWarnings("deprecation")
 		Gallery ga = (Gallery)findViewById(R.id.gallery1);
 		 ga.setSpacing(2);
 		 ga.setAdapter(new ImageAdapter(this.getBaseContext()));
-		 
-		 final CountDownTimer  myTimmer = new CountDownTimer(3000, 1000) {
-			final TextView mTextField = (TextView) findViewById(R.id.textView2);   
 
-			public void onTick(long millisUntilFinished) {
-				mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
-		     }
 
-		     public void onFinish() {	    	
-		    	 
-		    	 button2.setVisibility(0);
-		    	 button3.setVisibility(0);
-		    	 button4.setVisibility(0);
-		    	 
-		         mTextField.setText("done!");
-		         Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-				 v.vibrate(1000);
-				 Uri uri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-				 Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), uri);
-			     r.play();
-
-		     }
-		  };
-		  
-		  
-		  button1.setOnClickListener(new View.OnClickListener() {        	
-	            public void onClick(View v) {     
-	            	myTimmer.start();
-	            	button1.setVisibility(View.GONE);
-	            }
-	        });
-		  
-		final Intent intent = new Intent(getBaseContext(), WorkoutListActivity.class);
-      	 
-		  button2.setOnClickListener(new View.OnClickListener() {			
-			@Override
-			public void onClick(View arg0) {			
-				//todo mettre en base
-				startActivity(intent);   
-			}
-		});
-		  button3.setOnClickListener(new View.OnClickListener() {				
-				@Override
-				public void onClick(View arg0) {			
-					//todo mettre en base
-					startActivity(intent);   
-				}
-			});
-		  button4.setOnClickListener(new View.OnClickListener() {				
-				@Override
-				public void onClick(View arg0) {			
-					//todo mettre en base
-					startActivity(intent);   
-				}
-			});
-		 
 	}
 	   public class ImageAdapter extends BaseAdapter {
 
@@ -146,5 +126,37 @@ public class WorkoutActivity extends Activity {
 		getMenuInflater().inflate(R.menu.workout, menu);
 		return true;
 	}
+
+    protected void isFinish(){
+        Bundle extra = getIntent().getExtras();
+        if(extra.get("firstTest") != null){
+            finish();
+            Intent intent= (Intent) new Intent(getBaseContext(), WorkoutActivity.class);
+            Integer exercise = (Integer) extra.get("firstTest");
+            intent.putExtra("firstTest", ++exercise);
+            startActivity(intent);
+        }else{
+            finish();
+        }
+    }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case id.toEasy:
+                isFinish();
+                break;
+            case id.Normal:
+                isFinish();
+                break;
+            case id.toHard:
+                isFinish();
+                break;
+            case id.startCountdown:
+                myTimmer.start();
+                startCountdown.setVisibility(View.GONE);
+                break;
+        }
+
+    }
 
 }
