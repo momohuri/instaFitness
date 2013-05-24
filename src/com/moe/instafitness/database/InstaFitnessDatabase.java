@@ -3,16 +3,21 @@ package com.moe.instafitness.database;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.moe.instafitness.libraries.CSVReader;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class InstaFitnessDatabase {
+	private static volatile InstaFitnessDatabase instance = null;
+	
 	private static final String TAG = "InstaFitnessDatabase";
 	
 	private static final String DATABASE_NAME = "instafitness";
@@ -31,7 +36,17 @@ public class InstaFitnessDatabase {
      */
     public InstaFitnessDatabase(Context context) {
     	mDatabaseOpenHelper = new InstaFitnessOpenHelper(context);
-    	mDatabaseOpenHelper.loadCSV();
+    }
+    
+    public static InstaFitnessDatabase getInstance(Context context) {
+    	if (instance == null) {
+        	synchronized (InstaFitnessDatabase.class){
+        		if (instance == null) {
+        			instance = new InstaFitnessDatabase(context);
+                }
+        	}
+        }
+        return instance;
     }
     
     /**
@@ -51,6 +66,7 @@ public class InstaFitnessDatabase {
 	        "difficulty INTEGER, " +
 	        "time INTEGER, " +
 	        "sets INTEGER, " +
+	        "repetition INTEGER, " +
 	        "type TEXT, " +
 	        "material_needed INTEGER);",
 	        
@@ -87,6 +103,9 @@ public class InstaFitnessDatabase {
     	InstaFitnessOpenHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
             mHelperContext = context;
+            this.getReadableDatabase();
+            
+            loadCSV();
         }
 
 		@Override
@@ -95,25 +114,64 @@ public class InstaFitnessDatabase {
 			for(String i : DATABASE_TABLES_CREATE) {
 				 mDatabase.execSQL(i);
 			}
+			//loadCSV();
 		}
 		
 		private void loadCSV() {
+			String index[] = {};
 			String next[] = {};
 	        List<String[]> list = new ArrayList<String[]>();
 
 	        try {
-	            CSVReader reader = new CSVReader(new InputStreamReader(mHelperContext.getAssets().open("test.csv")));
-	            for(;;) {
+	            CSVReader reader = new CSVReader(new InputStreamReader(mHelperContext.getAssets().open("test2.csv")));
+	            int i = 0;
+	            while(true) {
+	            	if(i == 0) {
+	            		index = reader.readNext();
+	            	}
 	                next = reader.readNext();
 	                if(next != null) {
+	                	Map<String, String> workout = new HashMap<String, String>();
+	                	Map<String, String> personal_info = new HashMap<String, String>();
+	                	Map<String, String> type = new HashMap<String, String>();
+	                	for (int j = 0 ; j < index.length ; j++) {
+	                		String[] column = index[j].split(":");
+	                		if (column[0].equals("workout")) {
+	                			workout.put(column[1], next[j]);
+	                		} else if (column[0].equals("personal_info")) {
+	                			personal_info.put(column[1], next[j]);
+	                		} else if (column[0].equals("type")) {
+	                			type.put(column[1], next[j]);
+	                		}
+	                	}
+	                	
+	                	//on verifie que le workout possede un nom et une description
+	                	if (workout.get("name") != "" && workout.get("description") != "") {
+	                		long workout_id = addWorkout(workout);
+	                		Log.v(TAG, "workout_id: " + workout_id);
+	                	}
 	                    list.add(next);
 	                } else {
 	                    break;
 	                }
+	                i++;
 	            }
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
+	        boolean breakpoint = true;
+        }
+		
+		public long addWorkout(Map<String, String> workout) {
+            ContentValues workoutValues = new ContentValues();
+            
+            for (Map.Entry<String, String> entry : workout.entrySet()) {
+                String key = entry.getKey();
+                String value = entry.getValue();
+                workoutValues.put(key, value);
+            }
+
+            return mDatabase.insert(WORKOUT_TABLE_NAME, null, workoutValues);
         }
 
 		@Override

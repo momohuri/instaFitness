@@ -13,7 +13,6 @@ public class Workout {
     public ImageView getImageUI() {
         return imageUI;
     }
-
     public void setImageUI(ImageView imageUI) {
         this.imageUI = imageUI;
     }
@@ -21,10 +20,10 @@ public class Workout {
     public TextView getTitle() {
         return title;
     }
-
     public void setTitle(TextView title) {
         this.title = title;
     }
+    
     public TextView getDescription(){
         return description;
     }

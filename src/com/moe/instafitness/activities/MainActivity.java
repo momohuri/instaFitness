@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import com.moe.instafitness.R;
 import com.moe.instafitness.R.id;
+import com.moe.instafitness.database.InstaFitnessDatabase;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -23,7 +24,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
+		InstaFitnessDatabase.getInstance(getBaseContext());
 		
 		//this.haveProfile();
 
@@ -42,7 +44,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		Intent intent = new Intent(getBaseContext(), ProfileActivity.class);
 		startActivity(intent);
 	    return true;
-	    }
+    }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

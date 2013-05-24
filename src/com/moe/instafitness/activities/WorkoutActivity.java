@@ -23,9 +23,6 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
      Button toHard;
      CountDownTimer  myTimmer;
 
-
-
-
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -75,7 +72,7 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
         };
 
 		 @SuppressWarnings("deprecation")
-		Gallery ga = (Gallery)findViewById(R.id.gallery1);
+		 Gallery ga = (Gallery)findViewById(R.id.gallery1);
 		 ga.setSpacing(2);
 		 ga.setAdapter(new ImageAdapter(this.getBaseContext()));
 
