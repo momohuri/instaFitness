@@ -114,13 +114,12 @@ public class InstaFitnessDatabase {
 			for(String i : DATABASE_TABLES_CREATE) {
 				 mDatabase.execSQL(i);
 			}
-			//loadCSV();
 		}
 		
 		private void loadCSV() {
 			String index[] = {};
 			String next[] = {};
-	        List<String[]> list = new ArrayList<String[]>();
+	        //List<String[]> list = new ArrayList<String[]>();
 
 	        try {
 	            CSVReader reader = new CSVReader(new InputStreamReader(mHelperContext.getAssets().open("test2.csv")));
@@ -132,25 +131,40 @@ public class InstaFitnessDatabase {
 	                next = reader.readNext();
 	                if(next != null) {
 	                	Map<String, String> workout = new HashMap<String, String>();
-	                	Map<String, String> personal_info = new HashMap<String, String>();
-	                	Map<String, String> type = new HashMap<String, String>();
+	                	Map<String, String> personalInfo = new HashMap<String, String>();
+                        String[] muscles = new String[]{};
 	                	for (int j = 0 ; j < index.length ; j++) {
 	                		String[] column = index[j].split(":");
 	                		if (column[0].equals("workout")) {
 	                			workout.put(column[1], next[j]);
 	                		} else if (column[0].equals("personal_info")) {
-	                			personal_info.put(column[1], next[j]);
+                                personalInfo.put(column[1], next[j]);
 	                		} else if (column[0].equals("type")) {
-	                			type.put(column[1], next[j]);
+                                muscles = next[j].split(",");
 	                		}
 	                	}
 	                	
-	                	//on verifie que le workout possede un nom et une description
-	                	if (workout.get("name") != "" && workout.get("description") != "") {
-	                		long workout_id = addWorkout(workout);
-	                		Log.v(TAG, "workout_id: " + workout_id);
+	                	// si le workout possede un nom et une description ==> insert
+	                	if (!workout.get("name").equals("") && !workout.get("description").equals("")) {
+	                		long workoutId = addWorkout(workout);
+                            // si le workout a bien été ajouté dans la bdd
+                            // et qu'on a les infos personnelles ==> insert
+	                		if (workoutId > 0 && !personalInfo.get("how_many_time_week").equals("")) {
+                                long personalInfoId = addPersonalInfo(personalInfo);
+                            }
+                            // si le workout a bien été ajouté dans la bdd
+                            // et que qu'on a les types de muscles ==> insert
+                            if (workoutId > 0 && muscles.length > 0) {
+                                for (String muscle : muscles) {
+                                    long typeId = addType(muscle);
+                                    // si l'insert c'est bien passé on met a jour la table de liaison
+                                    if(typeId > 0) {
+                                        addJoinWorkoutType(workoutId, typeId);
+                                    }
+                                }
+                            }
 	                	}
-	                    list.add(next);
+	                    //list.add(next);
 	                } else {
 	                    break;
 	                }
@@ -159,9 +173,13 @@ public class InstaFitnessDatabase {
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
-	        boolean breakpoint = true;
         }
-		
+
+        /**
+         * Insert d'un workout
+         * @param workout
+         * @return workoutId
+         */
 		public long addWorkout(Map<String, String> workout) {
             ContentValues workoutValues = new ContentValues();
             
@@ -172,6 +190,49 @@ public class InstaFitnessDatabase {
             }
 
             return mDatabase.insert(WORKOUT_TABLE_NAME, null, workoutValues);
+        }
+
+        /**
+         * Insert des informations personnelles
+         * @param personalInfo
+         * @return personalInfoId
+         */
+        public long addPersonalInfo(Map<String, String> personalInfo) {
+            ContentValues personalInfoValues = new ContentValues();
+
+            for (Map.Entry<String, String> entry : personalInfo.entrySet()) {
+                String key = entry.getKey();
+                String value = entry.getValue();
+                personalInfoValues.put(key, value);
+            }
+
+            return mDatabase.insert(PERSONAL_INFO_TABLE_NAME, null, personalInfoValues);
+        }
+
+        /**
+         * Insert du type
+         * @param muscle
+         * @return muscleId
+         */
+        public long addType(String muscle) {
+            ContentValues typeValues = new ContentValues();
+            typeValues.put("muscle", muscle);
+
+            return mDatabase.insert(TYPE_TABLE_NAME, null, typeValues);
+        }
+
+        /**
+         * Insert dans la table faisant la jointure entre le workout et ses types
+         * @param workoutId
+         * @param typeId
+         * @return
+         */
+        public long addJoinWorkoutType(long workoutId, long typeId) {
+            ContentValues values = new ContentValues();
+            values.put("id_workout", (int) workoutId);
+            values.put("id_type", (int) typeId);
+
+            return mDatabase.insert(WORKOUT_TABLE_NAME + "_" + TYPE_TABLE_NAME, null, values);
         }
 
 		@Override
