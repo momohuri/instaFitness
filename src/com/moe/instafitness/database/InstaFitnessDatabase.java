@@ -23,6 +23,7 @@ public class InstaFitnessDatabase {
 	private static final String DATABASE_NAME = "instafitness";
 	private static final String WORKOUT_TABLE_NAME = "workout";
 	private static final String MUSCLE_TABLE_NAME = "muscles";
+    private static final String JUNCTION_W_M_TABLE_NAME = WORKOUT_TABLE_NAME + "_" + MUSCLE_TABLE_NAME;
 	private static final String PICTURE_TABLE_NAME = "picture";
 	private static final String DIFFICULTY_TABLE_NAME = "difficulty";
 	private static final String PERSONAL_INFO_TABLE_NAME = "personal_info";
@@ -60,11 +61,18 @@ public class InstaFitnessDatabase {
     }
 
     /**
-     * SQLiteQuery: SELECT * FROM workout LEFT OUTER JOIN muscles
+     * SQLiteQuery: SELECT * FROM workout
+     * LEFT OUTER JOIN workout_muscles ON workout.id=workout_muscles.id_workout
+     * JOIN muscles ON workout_muscles.id_muscle=muscles.id
+     *
      * @return la Cursor contenant tous les workout
      */
-    public Cursor selectAllWorkout() {
-        String table = WORKOUT_TABLE_NAME+" LEFT OUTER JOIN "+MUSCLE_TABLE_NAME;
+    public Cursor selectAllWorkouts() {
+        String table = WORKOUT_TABLE_NAME
+                +" LEFT OUTER JOIN "+JUNCTION_W_M_TABLE_NAME
+                +" ON "+WORKOUT_TABLE_NAME+".id="+JUNCTION_W_M_TABLE_NAME+".id_workout"
+                +" JOIN "+MUSCLE_TABLE_NAME
+                +" ON "+JUNCTION_W_M_TABLE_NAME+".id_muscle="+MUSCLE_TABLE_NAME+".id";
         String selection = null;
         String[] selectionArgs = null;
         String[] columns = {"*"};
@@ -129,7 +137,7 @@ public class InstaFitnessDatabase {
 			"id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , " +
 			"muscle TEXT);",
 			
-			"CREATE TABLE " + WORKOUT_TABLE_NAME + "_" + MUSCLE_TABLE_NAME + " (" +
+			"CREATE TABLE " + JUNCTION_W_M_TABLE_NAME + " (" +
 			"id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , " +
 			"id_workout INTEGER NOT NULL, " +
 			"id_muscle INTEGER NOT NULL);",
@@ -276,7 +284,7 @@ public class InstaFitnessDatabase {
             values.put("id_workout", (int) workoutId);
             values.put("id_muscle", (int) muscleId);
 
-            return mDatabase.insert(WORKOUT_TABLE_NAME + "_" + MUSCLE_TABLE_NAME, null, values);
+            return mDatabase.insert(JUNCTION_W_M_TABLE_NAME, null, values);
         }
 
 		@Override
