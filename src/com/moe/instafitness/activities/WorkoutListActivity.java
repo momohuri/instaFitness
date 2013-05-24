@@ -13,8 +13,8 @@ import com.moe.instafitness.R;
 import com.moe.instafitness.R.id;
 import com.moe.instafitness.adapter.WorkoutAdapter;
 import com.moe.instafitness.entity.WorkoutClass;
-
 import java.util.ArrayList;
+
 public class WorkoutListActivity extends ListActivity {
 	private ListView listViewWorkout;
     ArrayList<WorkoutClass> myWorkout;
