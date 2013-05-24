@@ -2,17 +2,17 @@ package com.moe.instafitness.database;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import com.moe.instafitness.libraries.CSVReader;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
 import android.util.Log;
 
 public class InstaFitnessDatabase {
@@ -47,6 +47,61 @@ public class InstaFitnessDatabase {
         	}
         }
         return instance;
+    }
+
+    /**
+     * Insert les informations personnelles en bdd
+     * @param personalInfo
+     * @return
+     */
+    public long insertPersonalInfo(Map<String, String> personalInfo) {
+        mDatabaseOpenHelper.getWritableDatabase();
+        return mDatabaseOpenHelper.insertPersonalInfo(personalInfo);
+    }
+
+    /**
+     * SQLiteQuery: SELECT * FROM workout LEFT OUTER JOIN muscles
+     * @return la Cursor contenant tous les workout
+     */
+    public Cursor selectAllWorkout() {
+        String table = WORKOUT_TABLE_NAME+" LEFT OUTER JOIN "+MUSCLE_TABLE_NAME;
+        String selection = null;
+        String[] selectionArgs = null;
+        String[] columns = {"*"};
+        String having = null;
+        String setOrder = null;
+
+        return this.query(table, selection, selectionArgs, columns, having, setOrder);
+    }
+
+    /**
+     * Performs a database query.
+     * @param table
+     * @param selection The selection clause
+     * @param selectionArgs Selection arguments for "?" components in the selection
+     * @param columns The columns to return
+     * @param having
+     * @param setOrder
+     * @return A Cursor over all rows matching the query
+     */
+    private Cursor query(String table, String selection, String[] selectionArgs, String[] columns, String having, String setOrder) {
+        /* The SQLiteBuilder provides a map for all possible columns requested to
+         * actual columns in the database, creating a simple column alias mechanism
+         * by which the ContentProvider does not need to know the real column names
+         */
+        SQLiteQueryBuilder builder = new SQLiteQueryBuilder();
+        builder.setTables(table);
+
+        Cursor cursor = builder.query(mDatabaseOpenHelper.getReadableDatabase(),
+                columns, selection, selectionArgs, having, setOrder, null);
+
+        if (cursor == null) {
+            return null;
+        } else if (!cursor.moveToFirst()) {
+            cursor.close();
+            return null;
+        }
+        return cursor;
     }
     
     /**
@@ -103,9 +158,6 @@ public class InstaFitnessDatabase {
     	InstaFitnessOpenHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
             mHelperContext = context;
-
-            // TODO: le getReadableDatabase ne doit pas se faire ici !!!
-            this.getReadableDatabase();
         }
 
 		@Override
@@ -118,7 +170,7 @@ public class InstaFitnessDatabase {
 		}
 		
 		private void loadCSV() {
-			String index[] = {}, next[] = {};
+			String index[] = {}, next[];
 	        //List<String[]> list = new ArrayList<String[]>();
 
 	        try {
@@ -143,15 +195,15 @@ public class InstaFitnessDatabase {
 	                	
 	                	// si le workout possede un nom et une description ==> insert
 	                	if (!workout.get("name").equals("") && !workout.get("description").equals("")) {
-	                		long workoutId = addWorkout(workout);
+	                		long workoutId = insertWorkout(workout);
                             // si le workout a bien été ajouté dans la bdd
                             // et que qu'on a les types de muscles ==> insert
                             if (workoutId > 0 && muscles.length > 0) {
                                 for (String muscle : muscles) {
-                                    long muscleId = addMuscle(muscle);
+                                    long muscleId = insertMuscle(muscle);
                                     // si l'insert c'est bien passé on met a jour la table de liaison
                                     if(muscleId > 0) {
-                                        addJoinWorkoutMuscle(workoutId, muscleId);
+                                        insertJoinWorkoutMuscle(workoutId, muscleId);
                                     }
                                 }
                             }
@@ -172,7 +224,7 @@ public class InstaFitnessDatabase {
          * @param workout
          * @return workoutId
          */
-		public long addWorkout(Map<String, String> workout) {
+		public long insertWorkout(Map<String, String> workout) {
             ContentValues workoutValues = new ContentValues();
             
             for (Map.Entry<String, String> entry : workout.entrySet()) {
@@ -189,7 +241,7 @@ public class InstaFitnessDatabase {
          * @param personalInfo
          * @return personalInfoId
          */
-        public long addPersonalInfo(Map<String, String> personalInfo) {
+        public long insertPersonalInfo(Map<String, String> personalInfo) {
             ContentValues personalInfoValues = new ContentValues();
 
             for (Map.Entry<String, String> entry : personalInfo.entrySet()) {
@@ -206,7 +258,7 @@ public class InstaFitnessDatabase {
          * @param muscle
          * @return muscleId
          */
-        public long addMuscle(String muscle) {
+        public long insertMuscle(String muscle) {
             ContentValues muscleValues = new ContentValues();
             muscleValues.put("muscle", muscle);
 
@@ -219,7 +271,7 @@ public class InstaFitnessDatabase {
          * @param muscleId
          * @return
          */
-        public long addJoinWorkoutMuscle(long workoutId, long muscleId) {
+        public long insertJoinWorkoutMuscle(long workoutId, long muscleId) {
             ContentValues values = new ContentValues();
             values.put("id_workout", (int) workoutId);
             values.put("id_muscle", (int) muscleId);

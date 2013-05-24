@@ -3,6 +3,7 @@ package com.moe.instafitness.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -25,8 +26,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		InstaFitnessDatabase.getInstance(getBaseContext());
-		
+        InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
+        Cursor workouts = instaFitnessDatabase.selectAllWorkout();
 		//this.haveProfile();
 
         this.buttonListEx = (Button) this.findViewById(R.id.buttonListEx);
