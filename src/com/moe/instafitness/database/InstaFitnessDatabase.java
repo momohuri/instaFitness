@@ -22,7 +22,7 @@ public class InstaFitnessDatabase {
 	
 	private static final String DATABASE_NAME = "instafitness";
 	private static final String WORKOUT_TABLE_NAME = "workout";
-	private static final String TYPE_TABLE_NAME = "type";
+	private static final String MUSCLE_TABLE_NAME = "muscles";
 	private static final String PICTURE_TABLE_NAME = "picture";
 	private static final String DIFFICULTY_TABLE_NAME = "difficulty";
 	private static final String PERSONAL_INFO_TABLE_NAME = "personal_info";
@@ -64,20 +64,20 @@ public class InstaFitnessDatabase {
 	        "description TEXT, " +
 	        "icon TEXT, " +
 	        "difficulty INTEGER, " +
-	        "time INTEGER, " +
+	        "duration INTEGER, " +
 	        "sets INTEGER, " +
 	        "repetition INTEGER, " +
 	        "type TEXT, " +
 	        "material_needed INTEGER);",
 	        
-	        "CREATE TABLE " + TYPE_TABLE_NAME + " (" +
+	        "CREATE TABLE " + MUSCLE_TABLE_NAME + " (" +
 			"id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , " +
 			"muscle TEXT);",
 			
-			"CREATE TABLE " + WORKOUT_TABLE_NAME + "_" + TYPE_TABLE_NAME + " (" +
+			"CREATE TABLE " + WORKOUT_TABLE_NAME + "_" + MUSCLE_TABLE_NAME + " (" +
 			"id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , " +
 			"id_workout INTEGER NOT NULL, " +
-			"id_type INTEGER NOT NULL);",
+			"id_muscle INTEGER NOT NULL);",
 			
 			"CREATE TABLE " + PICTURE_TABLE_NAME + " (" +
 	        "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , " +
@@ -103,9 +103,9 @@ public class InstaFitnessDatabase {
     	InstaFitnessOpenHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
             mHelperContext = context;
+
+            // TODO: le getReadableDatabase ne doit pas se faire ici !!!
             this.getReadableDatabase();
-            
-            loadCSV();
         }
 
 		@Override
@@ -114,11 +114,11 @@ public class InstaFitnessDatabase {
 			for(String i : DATABASE_TABLES_CREATE) {
 				 mDatabase.execSQL(i);
 			}
+            loadCSV();
 		}
 		
 		private void loadCSV() {
-			String index[] = {};
-			String next[] = {};
+			String index[] = {}, next[] = {};
 	        //List<String[]> list = new ArrayList<String[]>();
 
 	        try {
@@ -131,15 +131,12 @@ public class InstaFitnessDatabase {
 	                next = reader.readNext();
 	                if(next != null) {
 	                	Map<String, String> workout = new HashMap<String, String>();
-	                	Map<String, String> personalInfo = new HashMap<String, String>();
                         String[] muscles = new String[]{};
 	                	for (int j = 0 ; j < index.length ; j++) {
 	                		String[] column = index[j].split(":");
 	                		if (column[0].equals("workout")) {
 	                			workout.put(column[1], next[j]);
-	                		} else if (column[0].equals("personal_info")) {
-                                personalInfo.put(column[1], next[j]);
-	                		} else if (column[0].equals("type")) {
+	                		} else if (column[0].equals("muscle")) {
                                 muscles = next[j].split(",");
 	                		}
 	                	}
@@ -148,18 +145,13 @@ public class InstaFitnessDatabase {
 	                	if (!workout.get("name").equals("") && !workout.get("description").equals("")) {
 	                		long workoutId = addWorkout(workout);
                             // si le workout a bien été ajouté dans la bdd
-                            // et qu'on a les infos personnelles ==> insert
-	                		if (workoutId > 0 && !personalInfo.get("how_many_time_week").equals("")) {
-                                long personalInfoId = addPersonalInfo(personalInfo);
-                            }
-                            // si le workout a bien été ajouté dans la bdd
                             // et que qu'on a les types de muscles ==> insert
                             if (workoutId > 0 && muscles.length > 0) {
                                 for (String muscle : muscles) {
-                                    long typeId = addType(muscle);
+                                    long muscleId = addMuscle(muscle);
                                     // si l'insert c'est bien passé on met a jour la table de liaison
-                                    if(typeId > 0) {
-                                        addJoinWorkoutType(workoutId, typeId);
+                                    if(muscleId > 0) {
+                                        addJoinWorkoutMuscle(workoutId, muscleId);
                                     }
                                 }
                             }
@@ -210,29 +202,29 @@ public class InstaFitnessDatabase {
         }
 
         /**
-         * Insert du type
+         * Insert du muscle
          * @param muscle
          * @return muscleId
          */
-        public long addType(String muscle) {
-            ContentValues typeValues = new ContentValues();
-            typeValues.put("muscle", muscle);
+        public long addMuscle(String muscle) {
+            ContentValues muscleValues = new ContentValues();
+            muscleValues.put("muscle", muscle);
 
-            return mDatabase.insert(TYPE_TABLE_NAME, null, typeValues);
+            return mDatabase.insert(MUSCLE_TABLE_NAME, null, muscleValues);
         }
 
         /**
-         * Insert dans la table faisant la jointure entre le workout et ses types
+         * Insert dans la table faisant la jointure entre le workout et ses muscles
          * @param workoutId
-         * @param typeId
+         * @param muscleId
          * @return
          */
-        public long addJoinWorkoutType(long workoutId, long typeId) {
+        public long addJoinWorkoutMuscle(long workoutId, long muscleId) {
             ContentValues values = new ContentValues();
             values.put("id_workout", (int) workoutId);
-            values.put("id_type", (int) typeId);
+            values.put("id_muscle", (int) muscleId);
 
-            return mDatabase.insert(WORKOUT_TABLE_NAME + "_" + TYPE_TABLE_NAME, null, values);
+            return mDatabase.insert(WORKOUT_TABLE_NAME + "_" + MUSCLE_TABLE_NAME, null, values);
         }
 
 		@Override

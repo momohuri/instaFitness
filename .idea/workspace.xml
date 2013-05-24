@@ -19,11 +19,12 @@
     </list>
     <ignored path="instaFitness.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1369360566814" ignored="false" />
+    <file path="/Dummy.txt" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1369360636774" ignored="false" />
     <file path="/activity_main.xml" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1369342407065" ignored="false" />
     <file path="/fragment.java" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1369342859972" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1369348721666" ignored="false" />
-    <file path="/InstaFitnessDatabase.java" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1369360313816" ignored="false" />
+    <file path="/InstaFitnessDatabase.java" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1369362829974" ignored="false" />
+    <file path="/MainActivity.java" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1369362542255" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,19 +90,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InstaFitnessDatabase.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="InstaFitnessDatabase.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/database/InstaFitnessDatabase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="179" column="3" selection-start="6698" selection-end="6698" vertical-scroll-proportion="0.0">
+            <state line="120" column="45" selection-start="3998" selection-end="3998" vertical-scroll-proportion="0.21882951">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InstaFitnessProvider.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/database/InstaFitnessProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="11" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="58" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="17" selection-start="944" selection-end="944" vertical-scroll-proportion="0.088607594">
+            <state line="27" column="17" selection-start="944" selection-end="944" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -125,9 +146,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/moe/instafitness/activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/moe/instafitness/activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/moe/instafitness/database/InstaFitnessDatabase.java" />
       </list>
     </option>
@@ -362,7 +383,7 @@
       <workItem from="1369341823209" duration="2482000" />
       <workItem from="1369344506977" duration="1259000" />
       <workItem from="1369346587511" duration="9468000" />
-      <workItem from="1369357726229" duration="2904000" />
+      <workItem from="1369357726229" duration="5262000" />
     </task>
     <task id="LOCAL-00001" summary="refactor 2">
       <created>1369348762082</created>
@@ -372,11 +393,15 @@
       <created>1369355571206</created>
       <updated>1369355571206</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="methode insert table personal_info&#10;methode insert table type&#10;when i read the csv i also do the insert in this both table">
+      <created>1369360643168</created>
+      <updated>1369360643168</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16317000" />
+    <option name="totallyTimeSpent" value="18675000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -409,13 +434,13 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940991" sideWeight="0.2864" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940991" sideWeight="0.2864" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32854864" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3296" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940991" sideWeight="0.67304623" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24940991" sideWeight="0.67145133" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24940991" sideWeight="0.6704" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296617" sideWeight="0.6704" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -495,7 +520,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/database/InstaFitnessDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="122" column="31" selection-start="3973" selection-end="3977" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -509,7 +536,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/database/InstaFitnessDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="135" column="42" selection-start="4554" selection-end="4554" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -522,7 +551,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="11" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" />
+        <state line="7" column="11" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
@@ -531,7 +562,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/database/InstaFitnessDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="135" column="42" selection-start="4554" selection-end="4554" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -544,7 +577,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="11" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" />
+        <state line="7" column="11" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
@@ -557,16 +592,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="26" selection-start="551" selection-end="551" vertical-scroll-proportion="0.24958402">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="11" selection-start="347" selection-end="347" vertical-scroll-proportion="0.027223231" />
+        <state line="7" column="11" selection-start="347" selection-end="347" vertical-scroll-proportion="0.027223231">
+          <folding />
+        </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
@@ -582,17 +612,33 @@
         <state line="8" column="0" selection-start="350" selection-end="350" vertical-scroll-proportion="-4.730337" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/database/InstaFitnessDatabase.java">
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="3" selection-start="6698" selection-end="6698" vertical-scroll-proportion="0.0">
+        <state line="27" column="17" selection-start="944" selection-end="944" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="17" selection-start="944" selection-end="944" vertical-scroll-proportion="0.088607594">
+        <state line="27" column="58" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/database/InstaFitnessProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="11" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/database/InstaFitnessDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="45" selection-start="3998" selection-end="3998" vertical-scroll-proportion="0.21882951">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
