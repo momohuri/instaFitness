@@ -41,7 +41,8 @@
         android:drawableTop="@drawable/gym"
         android:background="@android:color/transparent"
         android:text="I'am at gym"
-        android:layout_alignParentTop="true" android:layout_alignParentLeft="true"/>
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
