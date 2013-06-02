@@ -67,14 +67,14 @@ public class InstaFitnessDatabase {
      *
      * @return la Cursor contenant tous les workout
      */
-    public Cursor selectAllWorkouts() {
+    public Cursor selectWorkouts( ) {
         String table = WORKOUT_TABLE_NAME
                 +" LEFT OUTER JOIN "+JUNCTION_W_M_TABLE_NAME
                 +" ON "+WORKOUT_TABLE_NAME+".id="+JUNCTION_W_M_TABLE_NAME+".id_workout"
                 +" JOIN "+MUSCLE_TABLE_NAME
                 +" ON "+JUNCTION_W_M_TABLE_NAME+".id_muscle="+MUSCLE_TABLE_NAME+".id";
-        String selection = null;
-        String[] selectionArgs = null;
+        String selection = null;   // String selection = "difficulty = ? AND duration = ?";
+        String[] selectionArgs = null;       //String[] selectionArgs = {"3", "4"};
         String[] columns = {"*"};
         String having = null;
         String setOrder = null;
@@ -122,7 +122,7 @@ public class InstaFitnessDatabase {
         
         private static final String[] DATABASE_TABLES_CREATE = {
 	        "CREATE TABLE " + WORKOUT_TABLE_NAME + " (" +
-	        "id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL UNIQUE , " +
+	        " _id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL UNIQUE , " +
 	        "name TEXT, " +
 	        "description TEXT, " +
 	        "icon TEXT, " +

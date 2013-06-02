@@ -10,10 +10,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Show me all &#10; excersice"
-        android:drawableTop="@drawable/all_workout"
+        android:drawableTop="@drawable/exercises"
         android:background="@android:color/transparent"
-        android:layout_alignRight="@+id/buttonAtHome"
-        android:layout_marginBottom="60dp" android:layout_marginLeft="35dp"/>
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"/>
 
     <Button
             android:id="@+id/buttonAtHome"
@@ -22,7 +23,9 @@
             android:text="I'am at home"
             android:drawableTop="@drawable/home"
             android:background="@android:color/transparent"
-            android:layout_alignParentBottom="true" android:layout_alignParentRight="true"/>
+            android:layout_marginTop="11dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/textView"/>
 
 
     <Button
@@ -32,7 +35,8 @@
         android:drawableTop="@drawable/history"
         android:background="@android:color/transparent"
         android:text="Show me my &#10;progress"
-        android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"/>
+        android:layout_alignTop="@+id/buttonListEx"
+        android:layout_alignRight="@+id/textView"/>
 
     <Button
         android:id="@+id/buttonAtGym"
@@ -41,8 +45,8 @@
         android:drawableTop="@drawable/gym"
         android:background="@android:color/transparent"
         android:text="I'am at gym"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"/>
+        android:layout_above="@+id/textView"
+        android:layout_alignRight="@+id/textView"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

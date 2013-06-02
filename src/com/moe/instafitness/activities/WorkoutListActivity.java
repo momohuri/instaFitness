@@ -2,6 +2,7 @@ package com.moe.instafitness.activities;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,14 +13,15 @@ import android.widget.ListView;
 import com.moe.instafitness.R;
 import com.moe.instafitness.R.id;
 import com.moe.instafitness.adapter.WorkoutAdapter;
+import com.moe.instafitness.database.InstaFitnessDatabase;
 import com.moe.instafitness.entity.WorkoutClass;
 import java.util.ArrayList;
 
 public class WorkoutListActivity extends ListActivity {
 	private ListView listViewWorkout;
-    ArrayList<WorkoutClass> myWorkout;
-    WorkoutAdapter adapter;
-	EditText editTextSearch;
+    private ArrayList<WorkoutClass> myWorkout;
+    private WorkoutAdapter adapter;
+	private EditText editTextSearch;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,20 +31,21 @@ public class WorkoutListActivity extends ListActivity {
         this.myWorkout = new ArrayList<WorkoutClass>();
         this.editTextSearch = (EditText) findViewById(id.editTextSearch);
         /// test ///
-        WorkoutClass test = new WorkoutClass();
-        WorkoutClass test2 = new WorkoutClass();
-        test.setTitle("salope");
-        test.setDescription("ok o k ok  o k k ok k k o k ");
-        test2.setTitle("tetetetet");
-        test2.setDescription("tetetetete ");
-        test2.setImageUI(getResources().getDrawable(R.drawable.ic_launcher));
-        test.setImageUI(getResources().getDrawable(R.drawable.ic_launcher));
-        myWorkout.add(test);
-        myWorkout.add(test2);
-        /// end test ///
+        InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
+        Cursor allWorkout = instaFitnessDatabase.selectWorkouts();
+
+        while (allWorkout.moveToNext()) {
+            WorkoutClass workout = new WorkoutClass();
+            workout.setTitle(allWorkout.getString(1));
+            workout.setDescription(allWorkout.getString(8));
+            workout.setImageUI(getResources().getDrawable(R.drawable.ic_launcher));
+            myWorkout.add(workout);
+        }
 
 
-       this.adapter = new WorkoutAdapter(this, android.R.id.list, this.myWorkout);
+       //this.adapter = new WorkoutAdapter(this, android.R.id.list, this.myWorkout);
+        this.adapter = new WorkoutAdapter(this, allWorkout) ;
+
 
         this.setListAdapter(adapter);
         this.listViewWorkout.setTextFilterEnabled(true);

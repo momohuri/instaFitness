@@ -28,7 +28,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_main);
 
         InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
-        Cursor workouts = instaFitnessDatabase.selectAllWorkouts();
+        Cursor workouts = instaFitnessDatabase.selectWorkouts();
 
         while (workouts.moveToNext()) {
             Log.i("CursorTest", workouts.getString(0));
