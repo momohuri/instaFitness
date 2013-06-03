@@ -70,7 +70,7 @@ public class InstaFitnessDatabase {
     public Cursor selectWorkouts( ) {
         String table = WORKOUT_TABLE_NAME
                 +" LEFT OUTER JOIN "+JUNCTION_W_M_TABLE_NAME
-                +" ON "+WORKOUT_TABLE_NAME+".id="+JUNCTION_W_M_TABLE_NAME+".id_workout"
+                +" ON "+WORKOUT_TABLE_NAME+"._id="+JUNCTION_W_M_TABLE_NAME+".id_workout"
                 +" JOIN "+MUSCLE_TABLE_NAME
                 +" ON "+JUNCTION_W_M_TABLE_NAME+".id_muscle="+MUSCLE_TABLE_NAME+".id";
         String selection = null;   // String selection = "difficulty = ? AND duration = ?";
