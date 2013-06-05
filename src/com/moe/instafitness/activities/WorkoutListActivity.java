@@ -8,8 +8,10 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.View;
+import android.widget.CursorAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import com.moe.instafitness.R;
 import com.moe.instafitness.R.id;
 import com.moe.instafitness.adapter.WorkoutAdapter;
@@ -22,6 +24,7 @@ public class WorkoutListActivity extends ListActivity {
     private ArrayList<WorkoutClass> myWorkout;
     private WorkoutAdapter adapter;
 	private EditText editTextSearch;
+    private Cursor cursor;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,20 +33,11 @@ public class WorkoutListActivity extends ListActivity {
         this.listViewWorkout = (ListView) findViewById(android.R.id.list);
         this.myWorkout = new ArrayList<WorkoutClass>();
         this.editTextSearch = (EditText) findViewById(id.editTextSearch);
-        /// test ///
+        //search don t work
+
         InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
         Cursor allWorkout = instaFitnessDatabase.selectWorkouts();
 
-        while (allWorkout.moveToNext()) {
-            WorkoutClass workout = new WorkoutClass();
-            workout.setTitle(allWorkout.getString(1));
-            workout.setDescription(allWorkout.getString(8));
-            workout.setImageUI(getResources().getDrawable(R.drawable.ic_launcher));
-            myWorkout.add(workout);
-        }
-
-
-       //this.adapter = new WorkoutAdapter(this, android.R.id.list, this.myWorkout);
         this.adapter = new WorkoutAdapter(this, allWorkout) ;
 
 
@@ -67,12 +61,21 @@ public class WorkoutListActivity extends ListActivity {
         });
 	}
 
+
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-        WorkoutClass workout = (WorkoutClass) l.getItemAtPosition(position);
+        super.onListItemClick(l, v, position, id);
+
+
+        this.cursor = ((CursorAdapter)l.getAdapter()).getCursor();
+        this.cursor.moveToPosition(position);
+
+        String titre = this.cursor.getString(this.cursor.getColumnIndex("name"));
         Intent intent = new Intent(getBaseContext(), WorkoutActivity.class);
-        intent.putExtra("extra",workout.getTitle());
+        intent.putExtra("extra",titre);
         this.startActivity(intent);
+
+
     }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

@@ -29,7 +29,7 @@ public class WorkoutAdapter extends CursorAdapter {
         String st = cursor.getString(cursor.getColumnIndex("name"));
         t.setText(st);
 
-        st = cursor.getString(cursor.getColumnIndex("description")).substring(0,20)+"...";
+        st = cursor.getString(cursor.getColumnIndex("type"));
         t = (TextView) view.findViewById(R.id.description);
         t.setText(st);
 
