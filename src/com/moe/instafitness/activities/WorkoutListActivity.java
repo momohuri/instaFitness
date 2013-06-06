@@ -72,7 +72,7 @@ public class WorkoutListActivity extends ListActivity {
 
         String titre = this.cursor.getString(this.cursor.getColumnIndex("name"));
         Intent intent = new Intent(getBaseContext(), WorkoutActivity.class);
-        intent.putExtra("extra",titre);
+        intent.putExtra("exerciseId",this.cursor.getString(this.cursor.getColumnIndex("_id")));
         this.startActivity(intent);
 
 

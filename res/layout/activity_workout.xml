@@ -9,7 +9,7 @@
     tools:context=".Workout" >
 
     <TextView
-        android:id="@id/textView1"
+        android:id="@+id/WorkoutTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
@@ -18,27 +18,26 @@
         android:id="@+id/gallery1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView1"
+        android:layout_below="@id/WorkoutTitle"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/textView1" />
+        android:layout_toRightOf="@id/WorkoutTitle" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/gallery1"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="175dp"
-        android:text="0" />
+        android:text="0"
+        android:layout_toRightOf="@+id/workoutDescription"
+        android:layout_alignTop="@+id/startCountdown"/>
 
     <Button
         android:id="@+id/startCountdown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/textView1"
-        android:layout_alignTop="@+id/textView2"
-        android:text="Start" />
+        android:text="Start"
+        android:layout_alignRight="@+id/WorkoutTitle"
+        android:layout_alignTop="@+id/toEasy"/>
 
     <Button
         android:id="@+id/toEasy"
@@ -81,8 +80,9 @@
         android:id="@+id/setsReps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/button1"
-        android:layout_centerVertical="true"
-        android:text="set :x reps : y" />
+        android:text="set :x reps : y"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="163dp"/>
 
 </RelativeLayout>

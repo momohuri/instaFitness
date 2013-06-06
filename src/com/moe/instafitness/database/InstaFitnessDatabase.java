@@ -82,6 +82,25 @@ public class InstaFitnessDatabase {
         return this.query(table, selection, selectionArgs, columns, having, setOrder);
     }
 
+
+    /**
+     *
+     * @param id
+     * @return cursor with workout
+     */
+    public Cursor getWorkout(String id) {
+
+        String table  = WORKOUT_TABLE_NAME;
+        String selection = "_id=?";
+        String[] selectionArgs = {id};
+        String[] columns = {"*"};
+        String having = null;
+        String setOrder = null;
+
+        return this.query(table,selection,selectionArgs,columns,having,setOrder);
+
+    }
+
     /**
      * Performs a database query.
      * @param table
@@ -111,7 +130,7 @@ public class InstaFitnessDatabase {
         }
         return cursor;
     }
-    
+
     /**
      * This creates/opens the database.
      */

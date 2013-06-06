@@ -3,18 +3,21 @@ package com.moe.instafitness.activities;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import com.moe.instafitness.R;
 import com.moe.instafitness.R.id;
+import com.moe.instafitness.database.InstaFitnessDatabase;
 
 public class WorkoutActivity extends Activity implements View.OnClickListener {
 	 Button startCountdown;
@@ -22,6 +25,7 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
      Button Normal;
      Button toHard;
      CountDownTimer  myTimmer;
+    Cursor workout;
 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,15 +43,23 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
         toHard.setOnClickListener(this);
 		
 		Bundle extra = getIntent().getExtras();
-		final TextView text = (TextView) findViewById(R.id.textView1);   		
-		 text.setText(extra.getString("extra"));
+
 		 if(extra.get("firstTest") != null){
 			Toast toast = Toast.makeText(getBaseContext(), extra.get("firstTest")+" test", Toast.LENGTH_SHORT);
 			 toast.show();
 		 }else{
-			 extra.getString("exerciseId");
-			 //get exercsise in db
+             InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
+             String id = extra.getString("exerciseId");
+             workout = instaFitnessDatabase.getWorkout(id);
 		 }
+
+        final TextView title = (TextView) findViewById(R.id.WorkoutTitle);
+        final TextView description  = (TextView) findViewById(R.id.workoutDescription);
+        final TextView setsreps = (TextView) findViewById(id.setsReps);
+        title.setText(workout.getString(workout.getColumnIndex("name")));
+        description.setText(workout.getString(workout.getColumnIndex("description")));
+        setsreps.setText("You need to do "+workout.getString(workout.getColumnIndex("sets")) +" sets of "+workout.getString(workout.getColumnIndex("repetition"))+ "repetitions");
+
 
         myTimmer = new CountDownTimer(3000, 1000) {
             TextView mTextField = (TextView) findViewById(id.textView2);
