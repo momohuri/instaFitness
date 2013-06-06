@@ -79,18 +79,6 @@
         android:layout_marginTop="14dp"
         android:text="Gender ?" />
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
-
     <RadioGroup
         android:id="@+id/sexe"
         android:layout_width="fill_parent"
@@ -122,5 +110,14 @@
         android:layout_marginLeft="14dp"
         android:layout_marginTop="45dp"
         android:text="" />
+
+    <EditText android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/editText1"
+              android:inputType="textPersonName"
+              android:layout_toRightOf="@+id/textView2"
+              android:layout_alignBottom="@+id/textView2">
+        <requestFocus></requestFocus>
+    </EditText>
 
 </RelativeLayout>
