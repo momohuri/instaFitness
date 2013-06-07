@@ -113,7 +113,7 @@
 
     <EditText android:layout_width="fill_parent"
               android:layout_height="wrap_content"
-              android:id="@+id/editText1"
+              android:id="@+id/inputName"
               android:inputType="textPersonName"
               android:layout_toRightOf="@+id/textView2"
               android:layout_alignBottom="@+id/textView2">

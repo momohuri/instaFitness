@@ -56,7 +56,6 @@ public class InstaFitnessDatabase {
      * @return
      */
     public long insertPersonalInfo(Map<String, String> personalInfo) {
-        mDatabaseOpenHelper.getWritableDatabase();
         return mDatabaseOpenHelper.insertPersonalInfo(personalInfo);
     }
 
@@ -269,6 +268,7 @@ public class InstaFitnessDatabase {
          * @return personalInfoId
          */
         public long insertPersonalInfo(Map<String, String> personalInfo) {
+            mDatabase = this.getWritableDatabase();
             ContentValues personalInfoValues = new ContentValues();
 
             for (Map.Entry<String, String> entry : personalInfo.entrySet()) {
@@ -277,7 +277,7 @@ public class InstaFitnessDatabase {
                 personalInfoValues.put(key, value);
             }
 
-            return mDatabase.insert(PERSONAL_INFO_TABLE_NAME, null, personalInfoValues);
+            return mDatabase.insertOrThrow(PERSONAL_INFO_TABLE_NAME, null, personalInfoValues);
         }
 
         /**

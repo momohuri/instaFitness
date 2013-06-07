@@ -7,16 +7,21 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import com.moe.instafitness.R;
+import com.moe.instafitness.database.InstaFitnessDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProfileActivity extends Activity {
 
 	private boolean sexe;
 	private boolean objectif;
-	private String test;	 
+	private String nbrPerWeek;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +41,7 @@ public class ProfileActivity extends Activity {
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				sexe = true;
 				if (sexe && objectif){
-					String text = "You should go "+ test +" day per week to the gym. Now let s make a test to see your skills.";
+					String text = "You should go "+ nbrPerWeek +" day per week to the gym. Now let s make a nbrPerWeek to see your skills.";
 					message.setText(text); 
 					finish.setVisibility(View.VISIBLE);
 				}				
@@ -51,13 +56,13 @@ public class ProfileActivity extends Activity {
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				objectif = true;
 				if(checkedId==R.id.radioButton1){
-					test="2";
+					nbrPerWeek ="2";
 				}else if (checkedId==R.id.radioButton2){
-					test="3";
+					nbrPerWeek ="3";
 				}else if(checkedId== R.id.radioButton3){
-					test="5";
+					nbrPerWeek ="5";
 				}
-				String text = "You should go "+ test +" day per week to the gym. Now let's makes a test to see your skills.";
+				String text = "You should go "+ nbrPerWeek +" day per week to the gym. Now let's makes a nbrPerWeek to see your skills.";
 				if (sexe && objectif){
 					message.setText(text); 
 					finish.setVisibility(View.VISIBLE);
@@ -70,6 +75,23 @@ public class ProfileActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				//TODO info in db
+
+                EditText name = (EditText) findViewById(R.id.inputName);
+
+
+
+                InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
+
+
+                Map<String, String> personalInfo  = new HashMap<String, String>();
+                personalInfo.put("name",name.getText().toString());
+                personalInfo.put("how_many_time_week", nbrPerWeek);
+
+
+
+                instaFitnessDatabase.insertPersonalInfo(personalInfo);
+
+
 				Intent intent= (Intent) new Intent(getBaseContext(), WorkoutActivity.class);
 				intent.putExtra("firstTest", 1);
 				startActivity(intent);
