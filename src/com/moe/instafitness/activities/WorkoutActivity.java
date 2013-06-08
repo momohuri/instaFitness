@@ -10,7 +10,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
@@ -114,16 +113,16 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
 
 	            i.setImageResource(mImageIds[position]);
 	            i.setScaleType(ImageView.ScaleType.FIT_XY);
-	            i.setLayoutParams(new Gallery.LayoutParams(136, 88));
+	            i.setLayoutParams(new Gallery.LayoutParams(230, 150));
 	            return i;
 	        }
 
 	        private Context mContext;
 
 	        private Integer[] mImageIds = {
-	   			 R.drawable.ic_launcher,
-				 R.drawable.ic_launcher,
-				 R.drawable.ic_launcher,
+	   			 R.drawable.test1,
+				 R.drawable.test2,
+				 R.drawable.test3,
 				 R.drawable.ic_launcher,
 				 R.drawable.ic_launcher	
 	        };
