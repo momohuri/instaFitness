@@ -81,7 +81,16 @@ public class InstaFitnessDatabase {
         return this.query(table, selection, selectionArgs, columns, having, setOrder);
     }
 
+    public Cursor selectProfile() {
+         String table = PERSONAL_INFO_TABLE_NAME;
+        String selection = null;   // String selection = "difficulty = ? AND duration = ?";
+        String[] selectionArgs = null;       //String[] selectionArgs = {"3", "4"};
+        String[] columns = {"*"};
+        String having = null;
+        String setOrder = null;
 
+        return this.query(table, selection, selectionArgs, columns, having, setOrder);
+    }
     /**
      *
      * @param id
@@ -129,6 +138,8 @@ public class InstaFitnessDatabase {
         }
         return cursor;
     }
+
+
 
     /**
      * This creates/opens the database.

@@ -49,11 +49,13 @@ public class MainActivity extends Activity implements OnClickListener {
         this.buttonAtGym.setOnClickListener(this);
 	}
 	
-	private boolean haveProfile() {
-
-		Intent intent = new Intent(getBaseContext(), ProfileActivity.class);
-		startActivity(intent);
-	    return true;
+	private void haveProfile() {
+        InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
+        Cursor profil = instaFitnessDatabase.selectProfile();
+        if(profil==null){
+            Intent intent = new Intent(getBaseContext(), ProfileActivity.class);
+            startActivity(intent);
+        }
     }
 
 	@Override
