@@ -18,6 +18,9 @@ import com.moe.instafitness.R;
 import com.moe.instafitness.R.id;
 import com.moe.instafitness.database.InstaFitnessDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class WorkoutActivity extends Activity implements View.OnClickListener {
 	 Button startCountdown;
      Button toEasy;
@@ -25,6 +28,7 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
      Button toHard;
      CountDownTimer  myTimmer;
      Cursor workout;
+    InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +47,6 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
 		
 		Bundle extra = getIntent().getExtras();
 
-        InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
 
 		 if(extra.get("firstTest") != null){
 			Toast toast = Toast.makeText(getBaseContext(), extra.get("grade").toString(), Toast.LENGTH_SHORT);
@@ -159,9 +162,13 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
             finish();
 
             Integer exercise = (Integer) extra.get("firstTest");
+            //if first test is finish or not
             if(exercise==6){
                 Intent intent= (Intent) new Intent(getBaseContext(), MainActivity.class);
                 intent.putExtra("evaluationFinish",true);
+                Map<String, String> personalInfo  = new HashMap<String, String>();
+                personalInfo.put("grade",extra.get("grade").toString());
+                instaFitnessDatabase.updatePersonalInfo(personalInfo);
                 startActivity(intent);
                 Toast toast = Toast.makeText(getBaseContext(),"Your evaluation is finished, you can now start a workout", Toast.LENGTH_SHORT);
                 toast.show();
@@ -174,6 +181,19 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
             }
 
         }else{
+            if(difficulty!=0){
+                Cursor personalinfo =  instaFitnessDatabase.selectProfile();
+                double grade = Integer.valueOf(personalinfo.getString(personalinfo.getColumnIndex("grade")));
+                if(difficulty==-1){
+                     grade = grade-0.1;
+                }else{
+                    grade = grade+0.1;
+                }
+                Map<String, String> personalInfo  = new HashMap<String, String>();
+                personalInfo.put("grade", String.valueOf(grade));
+                instaFitnessDatabase.updatePersonalInfo(personalInfo);
+            }
+            Cursor lol =  instaFitnessDatabase.selectProfile();
             finish();
         }
     }

@@ -60,6 +60,16 @@ public class InstaFitnessDatabase {
     }
 
     /**
+     * update personal info
+     * @param personalInfo map
+     * @return long ID
+     */
+    public long updatePersonalInfo(Map<String, String> personalInfo) {
+        return mDatabaseOpenHelper.updatePersonalInfo(personalInfo);
+    }
+
+
+    /**
      * SQLiteQuery: SELECT * FROM workout
      * LEFT OUTER JOIN workout_muscles ON workout.id=workout_muscles.id_workout
      * JOIN muscles ON workout_muscles.id_muscle=muscles.id
@@ -187,7 +197,7 @@ public class InstaFitnessDatabase {
 	        "name TEXT, " +
 	        "surname TEXT, " +
 	        "age INTEGER, " +
-	        "objectif_date DATETIME, " +
+	        "grade INTEGER, " +
 	        "weight FLOAT, " +
 	        "how_many_time_week INTEGER);"
 		};
@@ -289,6 +299,22 @@ public class InstaFitnessDatabase {
             }
 
             return mDatabase.insertOrThrow(PERSONAL_INFO_TABLE_NAME, null, personalInfoValues);
+        }
+
+        /**
+         *  update personal info
+         * @param personalInfo
+         * @return long with id
+         */
+        public long updatePersonalInfo(Map <String , String> personalInfo){
+            mDatabase = this.getWritableDatabase();
+            ContentValues personalInfoValues = new ContentValues();
+            for (Map.Entry<String, String> entry : personalInfo.entrySet()) {
+                String key = entry.getKey();
+                String value = entry.getValue();
+                personalInfoValues.put(key, value);
+            }
+            return mDatabase.update(PERSONAL_INFO_TABLE_NAME,personalInfoValues,"id=1",null);
         }
 
         /**
