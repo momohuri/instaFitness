@@ -35,36 +35,34 @@
         android:layout_height="wrap_content"
         android:text="Start"
         android:layout_alignRight="@+id/WorkoutTitle"
-        android:layout_alignTop="@+id/toEasy"/>
-
-    <Button
-        android:id="@+id/toEasy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="42dp"
-        android:visibility="invisible"
-        android:text="to easy" />
-
-    <Button
-        android:id="@+id/Normal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/toEasy"
-        android:layout_alignBottom="@+id/toEasy"
-        android:layout_centerHorizontal="true"
-        android:visibility="invisible"
-        android:text="perfect for me" />
+        android:layout_alignTop="@+id/toHard"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/toHard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="42dp"
+        android:text="to hard" />
+
+    <Button
+        android:id="@+id/Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/toHard"
+        android:layout_alignBottom="@+id/toHard"
+        android:layout_centerHorizontal="true"
+        android:text="perfect for me" />
+
+    <Button
+        android:id="@+id/toEasy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/Normal"
         android:layout_alignRight="@+id/gallery1"
-        android:visibility="invisible"
-        android:text="to hard" />
+        android:text="to easy" />
 
     <TextView
         android:id="@+id/workoutDescription"
@@ -80,8 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="set :x reps : y"
-        android:layout_toRightOf="@+id/textView2"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="163dp"/>
+        android:layout_marginTop="200dp"/>
 
 </RelativeLayout>

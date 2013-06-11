@@ -57,28 +57,66 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/moe/instafitness/activities/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/moe/instafitness/activities/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/moe/instafitness/activities/ProfileActivity.java" afterPath="$PROJECT_DIR$/src/com/moe/instafitness/activities/ProfileActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/moe/instafitness/activities/WorkoutActivity.java" afterPath="$PROJECT_DIR$/src/com/moe/instafitness/activities/WorkoutActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/moe/instafitness/activities/WorkoutListActivity.java" afterPath="$PROJECT_DIR$/src/com/moe/instafitness/activities/WorkoutListActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/activity_workout.xml" afterPath="$PROJECT_DIR$/res/layout/activity_workout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/list.xml" afterPath="$PROJECT_DIR$/res/layout/list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/workout_list.xml" afterPath="$PROJECT_DIR$/res/layout/workout_list.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="instaFitness.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370909986102" ignored="false" />
+    <file path="/Dummy.txt" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910235977" ignored="false" />
     <file path="/activity_main.xml" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1369786404371" ignored="false" />
-    <file path="/fragment.java" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370503496531" ignored="false" />
+    <file path="/fragment.java" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370912773463" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1369348721666" ignored="false" />
     <file path="/InstaFitnessDatabase.java" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370504811586" ignored="false" />
     <file path="/MainActivity.java" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370471904943" ignored="false" />
     <file path="/WorkoutListActivity.java" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370479384073" ignored="false" />
     <file path="/WorkoutAdapter.java" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370409870243" ignored="false" />
-    <file path="/WorkoutActivity.java" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370657215589" ignored="false" />
-    <file path="/activity_workout.xml" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370480835787" ignored="false" />
-    <file path="/a.xml" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370477803208" ignored="false" />
+    <file path="/WorkoutActivity.java" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370916604264" ignored="false" />
+    <file path="/activity_workout.xml" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370915025619" ignored="false" />
+    <file path="/a.xml" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910244347" ignored="false" />
     <file path="/activity_profile.xml" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370478188084" ignored="false" />
-    <file path="/ProfileActivity.java" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370655635940" ignored="false" />
+    <file path="/ProfileActivity.java" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910997620" ignored="false" />
     <file path="/list.xml" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370656136733" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/business-process.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087964" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/catalog.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087964" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/html5/xhtml5.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087964" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl11_httpbinding.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087964" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/html_basic.taglib.xml" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/cxf-jaxws.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v12/weblogic-ejb-jar_1_3.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/cxf-soap.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facelettaglibrary_2_0.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-tx-3.2.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/ws-addr2006.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v12/weblogic-ejb-jar_1_2.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jee-2.0.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v12/weblogic-rdbms-jar_1_2.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v12/weblogic-ejb-jar_1_1.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/facelets_jsf_core.taglib.xml" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v10/weblogic-application_1_0.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v10/weblogic-rdbms-jar_1_0.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/connector_1_6.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-tool-2.0.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-app_2_5.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jee-3.0.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/XMLSchema-instance.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/cxf.web.xml" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/Axis.services.wsdd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/connector_1_5.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087965" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-transitional.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087966" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-strict.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087966" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-app_3_0.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087966" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/AxisServlet.web.xml" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087966" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jdbc-3.1.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087966" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/spring.tld" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087966" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/XMLSchema.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087966" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/soap-encoding.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087966" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xinclude.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087966" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-1_0.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087966" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-2_0.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087966" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xml.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087966" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-frameset.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087966" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-beans-3.2.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370910087966" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/android/lib/android.jar!/org/jetbrains/android/android.xsd" changelist="f2ea04f3-88d7-4fd3-a71b-06d14a6b18f8" time="1370912026073" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,54 +177,8 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/ProfileActivity.java" line="94" class="com.moe.instafitness.activities.ProfileActivity$3" package="com.moe.instafitness.activities">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/moe/instafitness/database/InstaFitnessDatabase.java" line="279" class="com.moe.instafitness.database.InstaFitnessDatabase.InstaFitnessOpenHelper" package="com.moe.instafitness.database">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/ProfileActivity.java" line="91" class="com.moe.instafitness.activities.ProfileActivity$3" package="com.moe.instafitness.activities">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -196,74 +188,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InstaFitnessDatabase.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/database/InstaFitnessDatabase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="279" column="0" selection-start="10140" selection-end="10140" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_workout.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/activity_workout.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="44" selection-start="2610" selection-end="2610" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="8" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0">
+            <state line="52" column="8" selection-start="1638" selection-end="1638" vertical-scroll-proportion="0.33278418">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workout_list.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/workout_list.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
+      <file leaf-file-name="ProfileActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/ProfileActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="194" selection-end="379" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="88" column="42" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#2556#2572#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/list.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="46" selection-start="944" selection-end="944" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorkoutListActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/WorkoutListActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="0" selection-start="2477" selection-end="2477" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorkoutActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="WorkoutActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/WorkoutActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="104" selection-start="2468" selection-end="2468" vertical-scroll-proportion="0.95412844">
-              <folding />
+            <state line="174" column="67" selection-start="6180" selection-end="6180" vertical-scroll-proportion="-11.178572">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3776#3808#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -292,21 +244,21 @@
         <option value="$PROJECT_DIR$/src/com/moe/instafitness/adapter/WorkoutAdapter.java" />
         <option value="$PROJECT_DIR$/res/layout/activity_profile.xml" />
         <option value="$PROJECT_DIR$/src/com/moe/instafitness/database/InstaFitnessDatabase.java" />
-        <option value="$PROJECT_DIR$/src/com/moe/instafitness/activities/ProfileActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/moe/instafitness/activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/workout_list.xml" />
         <option value="$PROJECT_DIR$/res/layout/list.xml" />
         <option value="$PROJECT_DIR$/src/com/moe/instafitness/activities/WorkoutListActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/moe/instafitness/activities/ProfileActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/activity_workout.xml" />
         <option value="$PROJECT_DIR$/src/com/moe/instafitness/activities/WorkoutActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/moe/instafitness/activities/MainActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
-    <option name="y" value="24" />
-    <option name="width" value="1546" />
-    <option name="height" value="876" />
+    <option name="x" value="53" />
+    <option name="y" value="-4" />
+    <option name="width" value="1548" />
+    <option name="height" value="905" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -360,6 +312,110 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instaFitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instaFitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instaFitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instaFitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instafitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instaFitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instaFitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instafitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instaFitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instaFitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instafitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instaFitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instaFitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instaFitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="instaFitness" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -374,8 +430,8 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="preferences.sourceCode.XML" />
-    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="Medfield215D1AE1" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -616,7 +672,11 @@
       <created>1370652298942</created>
       <updated>1370652298942</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="refactor">
+      <created>1370910034144</created>
+      <updated>1370910034144</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -643,38 +703,38 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="24" width="1546" height="876" extended-state="0" />
-    <editor active="false" />
+    <frame x="53" y="-4" width="1548" height="905" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32352942" sideWeight="0.8482024" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38903743" sideWeight="0.8482024" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32695374" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296617" sideWeight="0.6704" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931727" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34903046" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34886816" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940991" sideWeight="0.2864" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15179761" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32686982" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" x="1653" y="-4" width="1548" height="905" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.32686982" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" x="1653" y="-4" width="1548" height="905" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3239625" sideWeight="0.6620499" order="2" side_tool="true" content_ui="tabs" x="463" y="498" width="372" height="261" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23627844" sideWeight="0.2936288" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32409972" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3239625" sideWeight="0.06232687" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14237969" sideWeight="0.8482024" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32356858" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940991" sideWeight="0.2864" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38955823" sideWeight="0.6620499" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296617" sideWeight="0.6704" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33795014" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39946738" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -720,7 +780,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="test images" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -743,6 +803,7 @@
     <MESSAGE value="workout" />
     <MESSAGE value="profil debug" />
     <MESSAGE value="test images" />
+    <MESSAGE value="refactor" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -798,30 +859,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/ProfileActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1487#1488#0" expanded="true" />
-            <element signature="e#1625#2203#0" expanded="true" />
-            <element signature="e#2198#2199#0" expanded="true" />
-            <element signature="e#2244#2979#0" expanded="true" />
-            <element signature="e#2594#2610#0" expanded="true" />
-            <element signature="e#2974#2975#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_workout.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="19" column="37" selection-start="794" selection-end="794" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="10" selection-start="1069" selection-end="1069" vertical-scroll-proportion="0.0">
@@ -850,81 +887,93 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_profile.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state line="116" column="47" selection-start="4175" selection-end="4175" vertical-scroll-proportion="0.0" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/ProfileActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="71" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.5202312">
-          <folding>
-            <element signature="e#1487#1488#0" expanded="true" />
-            <element signature="e#1625#2203#0" expanded="true" />
-            <element signature="e#2198#2199#0" expanded="true" />
-            <element signature="e#2244#2979#0" expanded="true" />
-            <element signature="e#2594#2610#0" expanded="true" />
-            <element signature="e#2974#2975#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/database/InstaFitnessDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="279" column="0" selection-start="10140" selection-end="10140" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="8" selection-start="1067" selection-end="1067" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/workout_list.xml">
-      <provider editor-type-id="android-designer">
+      <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/WorkoutListActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="194" selection-end="379" vertical-scroll-proportion="0.0">
+        <state line="72" column="0" selection-start="2477" selection-end="2477" vertical-scroll-proportion="0.58391124">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/view/Workout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="154" selection-end="154" vertical-scroll-proportion="0.1633987">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/list.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="46" selection-start="944" selection-end="944" vertical-scroll-proportion="1.0813954">
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/database/InstaFitnessDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="46" selection-start="944" selection-end="944" vertical-scroll-proportion="0.0">
+        <state line="269" column="20" selection-start="9725" selection-end="9725" vertical-scroll-proportion="1.4604715">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/WorkoutListActivity.java">
+    <entry file="jar://$USER_HOME$/app/sdk/platforms/android-17/android.jar!/android/app/Activity.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="0" selection-start="2477" selection-end="2477" vertical-scroll-proportion="0.0">
+        <state line="349" column="16" selection-start="15508" selection-end="15508" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/workout_list.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="194" selection-end="379" vertical-scroll-proportion="0.15570934">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_workout.xml">
-      <provider editor-type-id="android-designer">
+      <provider editor-type-id="text-editor">
+        <state line="53" column="49" selection-start="1974" selection-end="1978" vertical-scroll-proportion="-10.285714">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/ProfileActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="44" selection-start="2610" selection-end="2610" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="88" column="42" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#2556#2572#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/WorkoutActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="104" selection-start="2468" selection-end="2468" vertical-scroll-proportion="0.95412844">
+        <state line="174" column="67" selection-start="6180" selection-end="6180" vertical-scroll-proportion="-11.178572">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3776#3808#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/moe/instafitness/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="8" selection-start="1638" selection-end="1638" vertical-scroll-proportion="0.33278418">
           <folding />
         </state>
       </provider>

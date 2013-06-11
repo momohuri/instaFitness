@@ -41,7 +41,7 @@ public class ProfileActivity extends Activity {
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				sexe = true;
 				if (sexe && objectif){
-					String text = "You should go "+ nbrPerWeek +" day per week to the gym. Now let s make a nbrPerWeek to see your skills.";
+					String text = "You should go "+ nbrPerWeek +" day per week to the gym. Now let s make a test to see your skills.";
 					message.setText(text); 
 					finish.setVisibility(View.VISIBLE);
                 }
@@ -62,7 +62,7 @@ public class ProfileActivity extends Activity {
 				}else if(checkedId== R.id.radioButton3){
 					nbrPerWeek ="5";
 				}
-				String text = "You should go "+ nbrPerWeek +" day per week to the gym. Now let's makes a nbrPerWeek to see your skills.";
+				String text = "You should go "+ nbrPerWeek +" day per week to the gym. Now let's makes a test to see your skills.";
 				if (sexe && objectif){
 					message.setText(text); 
 					finish.setVisibility(View.VISIBLE);
@@ -74,26 +74,19 @@ public class ProfileActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				//TODO info in db
-
                 EditText name = (EditText) findViewById(R.id.inputName);
-
-
-
                 InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
 
 
                 Map<String, String> personalInfo  = new HashMap<String, String>();
                 personalInfo.put("name",name.getText().toString());
                 personalInfo.put("how_many_time_week", nbrPerWeek);
-
-
-
                 instaFitnessDatabase.insertPersonalInfo(personalInfo);
 
 
 				Intent intent= (Intent) new Intent(getBaseContext(), WorkoutActivity.class);
 				intent.putExtra("firstTest", 1);
+                intent.putExtra("grade", 5);
 				startActivity(intent);
 			}
 		});

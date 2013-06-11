@@ -24,19 +24,19 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
      Button Normal;
      Button toHard;
      CountDownTimer  myTimmer;
-    Cursor workout;
+     Cursor workout;
 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_workout);
 		
-	    startCountdown = (Button) findViewById(R.id.startCountdown);
+
 		toEasy = (Button) findViewById(id.toEasy);
 		Normal = (Button) findViewById(id.Normal);
 		toHard = (Button) findViewById(id.toHard);
 
-        startCountdown.setOnClickListener(this);
+
         toEasy.setOnClickListener(this);
         Normal.setOnClickListener(this);
         toHard.setOnClickListener(this);
@@ -46,9 +46,9 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
         InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
 
 		 if(extra.get("firstTest") != null){
-			Toast toast = Toast.makeText(getBaseContext(), extra.get("firstTest")+" test", Toast.LENGTH_SHORT);
+			Toast toast = Toast.makeText(getBaseContext(), extra.get("grade").toString(), Toast.LENGTH_SHORT);
 			 toast.show();
-             workout = instaFitnessDatabase.getWorkout("1");
+             workout = instaFitnessDatabase.getWorkout(extra.get("firstTest").toString());
 		 }else{
              String id = extra.getString("exerciseId");
              workout = instaFitnessDatabase.getWorkout(id);
@@ -56,34 +56,49 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
 
         final TextView title = (TextView) findViewById(R.id.WorkoutTitle);
         final TextView description  = (TextView) findViewById(R.id.workoutDescription);
-        final TextView setsreps = (TextView) findViewById(id.setsReps);
+
         title.setText(workout.getString(workout.getColumnIndex("name")));
         description.setSingleLine(false);
         description.setText(workout.getString(workout.getColumnIndex("description")).replace("/n", "\n\n"));
-        setsreps.setText("You need to do "+workout.getString(workout.getColumnIndex("sets")) +" sets of "+workout.getString(workout.getColumnIndex("repetition"))+ "repetitions");
+
+        //if theire is a duration do a timmer :
+        if(!"".equals(workout.getString(workout.getColumnIndex("duration")))){
+            startCountdown = (Button) findViewById(R.id.startCountdown);
+            startCountdown.setOnClickListener(this);
 
 
-        myTimmer = new CountDownTimer(3000, 1000) {
-            TextView mTextField = (TextView) findViewById(id.textView2);
+            toEasy.setVisibility(View.GONE);
+            Normal.setVisibility(View.GONE);
+            toHard.setVisibility(View.GONE);
+            startCountdown.setVisibility(0);
 
-            public void onTick(long millisUntilFinished) {
-                 mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
-            }
+            myTimmer = new CountDownTimer(3000, 1000) {
+                TextView mTextField = (TextView) findViewById(id.textView2);
 
-            public void onFinish() {
-                toEasy.setVisibility(0);
-                Normal.setVisibility(0);
-                toHard.setVisibility(0);
+                public void onTick(long millisUntilFinished) {
+                     mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
+                }
 
-                // mTextField.setText("done!");
-                Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                v.vibrate(1000);
-                Uri uri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-                Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), uri);
-                r.play();
+                public void onFinish() {
+                    toEasy.setVisibility(0);
+                    Normal.setVisibility(0);
+                    toHard.setVisibility(0);
 
-            }
-        };
+
+                    // mTextField.setText("done!");
+                    Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(1000);
+                    Uri uri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                    Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), uri);
+                    r.play();
+
+                }
+            };
+        }else{
+            final TextView setsreps = (TextView) findViewById(id.setsReps);
+            setsreps.setText("You need to do "+workout.getString(workout.getColumnIndex("sets")) +" sets of "+workout.getString(workout.getColumnIndex("repetition"))+ "repetitions");
+        }
+
 
 		 @SuppressWarnings("deprecation")
 		 Gallery ga = (Gallery)findViewById(R.id.gallery1);
@@ -137,15 +152,27 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
 		getMenuInflater().inflate(R.menu.workout, menu);
 		return true;
 	}
-
-    protected void isFinish(){
+     //when the exercise is finish, we want to know if we are on the first test or random one
+    protected void isFinish(Integer difficulty){
         Bundle extra = getIntent().getExtras();
         if(extra.get("firstTest") != null){
             finish();
-            Intent intent= (Intent) new Intent(getBaseContext(), WorkoutActivity.class);
+
             Integer exercise = (Integer) extra.get("firstTest");
-            intent.putExtra("firstTest", ++exercise);
-            startActivity(intent);
+            if(exercise==6){
+                Intent intent= (Intent) new Intent(getBaseContext(), MainActivity.class);
+                intent.putExtra("evaluationFinish",true);
+                startActivity(intent);
+                Toast toast = Toast.makeText(getBaseContext(),"Your evaluation is finished, you can now start a workout", Toast.LENGTH_SHORT);
+                toast.show();
+            } else{
+                Intent intent= (Intent) new Intent(getBaseContext(), WorkoutActivity.class);
+                intent.putExtra("firstTest", ++exercise);
+                Integer grade = (Integer) extra.get("grade");
+                intent.putExtra("grade", grade + difficulty);
+                startActivity(intent);
+            }
+
         }else{
             finish();
         }
@@ -154,13 +181,13 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case id.toEasy:
-                isFinish();
+                isFinish(1);
                 break;
             case id.Normal:
-                isFinish();
+                isFinish(0);
                 break;
             case id.toHard:
-                isFinish();
+                isFinish(-1);
                 break;
             case id.startCountdown:
                 myTimmer.start();
