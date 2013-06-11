@@ -4,10 +4,10 @@
     android:layout_height="fill_parent"
     >
 
-    <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editTextSearch"/>
+    <!--<EditText-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/editTextSearch"/>-->
 
     <ListView
             android:layout_width="fill_parent"

@@ -43,11 +43,13 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
 		
 		Bundle extra = getIntent().getExtras();
 
+        InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
+
 		 if(extra.get("firstTest") != null){
 			Toast toast = Toast.makeText(getBaseContext(), extra.get("firstTest")+" test", Toast.LENGTH_SHORT);
 			 toast.show();
+             workout = instaFitnessDatabase.getWorkout("1");
 		 }else{
-             InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
              String id = extra.getString("exerciseId");
              workout = instaFitnessDatabase.getWorkout(id);
 		 }
@@ -56,7 +58,8 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
         final TextView description  = (TextView) findViewById(R.id.workoutDescription);
         final TextView setsreps = (TextView) findViewById(id.setsReps);
         title.setText(workout.getString(workout.getColumnIndex("name")));
-        description.setText(workout.getString(workout.getColumnIndex("description")));
+        description.setSingleLine(false);
+        description.setText(workout.getString(workout.getColumnIndex("description")).replace("/n", "\n\n"));
         setsreps.setText("You need to do "+workout.getString(workout.getColumnIndex("sets")) +" sets of "+workout.getString(workout.getColumnIndex("repetition"))+ "repetitions");
 
 

@@ -32,7 +32,7 @@ public class WorkoutListActivity extends ListActivity {
 		setContentView(R.layout.workout_list);
         this.listViewWorkout = (ListView) findViewById(android.R.id.list);
         this.myWorkout = new ArrayList<WorkoutClass>();
-        this.editTextSearch = (EditText) findViewById(id.editTextSearch);
+        //this.editTextSearch = (EditText) findViewById(id.editTextSearch);
         //search don t work
 
         InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
@@ -44,21 +44,21 @@ public class WorkoutListActivity extends ListActivity {
         this.setListAdapter(adapter);
         this.listViewWorkout.setTextFilterEnabled(true);
 
-        editTextSearch.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                adapter = (WorkoutAdapter) listViewWorkout.getAdapter();
-               adapter.getFilter().filter(s.toString());
-            }
-        });
+//        editTextSearch.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//            }
+//
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//                adapter = (WorkoutAdapter) listViewWorkout.getAdapter();
+//               adapter.getFilter().filter(s.toString());
+//            }
+//        });
 	}
 
 
@@ -70,7 +70,6 @@ public class WorkoutListActivity extends ListActivity {
         this.cursor = ((CursorAdapter)l.getAdapter()).getCursor();
         this.cursor.moveToPosition(position);
 
-        String titre = this.cursor.getString(this.cursor.getColumnIndex("name"));
         Intent intent = new Intent(getBaseContext(), WorkoutActivity.class);
         intent.putExtra("exerciseId",this.cursor.getString(this.cursor.getColumnIndex("_id")));
         this.startActivity(intent);

@@ -44,7 +44,7 @@ public class ProfileActivity extends Activity {
 					String text = "You should go "+ nbrPerWeek +" day per week to the gym. Now let s make a nbrPerWeek to see your skills.";
 					message.setText(text); 
 					finish.setVisibility(View.VISIBLE);
-				}				
+                }
 			}
 		});
 	
