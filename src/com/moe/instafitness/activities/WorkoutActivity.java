@@ -193,7 +193,6 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
                 personalInfo.put("grade", String.valueOf(grade));
                 instaFitnessDatabase.updatePersonalInfo(personalInfo);
             }
-            Cursor lol =  instaFitnessDatabase.selectProfile();
             finish();
         }
     }

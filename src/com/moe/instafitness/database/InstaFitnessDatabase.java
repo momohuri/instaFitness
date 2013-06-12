@@ -68,6 +68,14 @@ public class InstaFitnessDatabase {
         return mDatabaseOpenHelper.updatePersonalInfo(personalInfo);
     }
 
+    /**
+     *
+     * @param difficulty
+     * @return  long with id
+     */
+    public long insertDifficulty(Map<String, String> difficulty){
+        return mDatabaseOpenHelper.insertDifficulty(difficulty);
+    }
 
     /**
      * SQLiteQuery: SELECT * FROM workout
@@ -301,6 +309,25 @@ public class InstaFitnessDatabase {
             return mDatabase.insertOrThrow(PERSONAL_INFO_TABLE_NAME, null, personalInfoValues);
         }
 
+
+        /**
+         *
+         * @param difficulty
+         * @return Id
+         */
+        public long insertDifficulty(Map<String,String> difficulty) {
+            mDatabase = this.getWritableDatabase();
+            ContentValues personalInfoValues = new ContentValues();
+
+            for (Map.Entry<String, String> entry : difficulty.entrySet()) {
+                String key = entry.getKey();
+                String value = entry.getValue();
+                personalInfoValues.put(key, value);
+            }
+
+            return mDatabase.insertOrThrow(PERSONAL_INFO_TABLE_NAME, null, personalInfoValues);
+        }
+
         /**
          *  update personal info
          * @param personalInfo
@@ -352,6 +379,7 @@ public class InstaFitnessDatabase {
 			}
             onCreate(db);
 		}
+
     }
 
 }
