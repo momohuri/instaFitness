@@ -195,13 +195,13 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
                 }else{
                     grade = grade+0.1;
                 }
+
+                //insert the difficulty for the grade of the current user
                 Map<String, String> personalInfo  = new HashMap<String, String>();
                 personalInfo.put("grade", String.valueOf(grade));
                 instaFitnessDatabase.updatePersonalInfo(personalInfo);
-//                "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , " +
-//                        "id_workout INTEGER NOT NULL, " +
-//                        "note INTEGER, " +
-//                        "timestamp DATETIME);",
+
+                //insert difficulty into db for the current workout
                 Map<String, String> difficultyInfo =  new HashMap<String,String>();
                 difficultyInfo.put("id_workout",workoutId);
                 difficultyInfo.put("note", String.valueOf(difficulty));

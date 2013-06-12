@@ -37,9 +37,16 @@ public class WorkoutListActivity extends ListActivity {
 
         InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
         Cursor allWorkout = instaFitnessDatabase.selectWorkouts();
-
-        this.adapter = new WorkoutAdapter(this, allWorkout) ;
-
+        Bundle extra = getIntent().getExtras();
+        if(extra!=null) {
+            if(extra.get("place")=="home") {
+                this.adapter = new WorkoutAdapter(this, allWorkout);
+            }else if(extra.get("place")=="gym"){
+                this.adapter = new WorkoutAdapter(this, allWorkout);
+            }
+        }else{
+            this.adapter = new WorkoutAdapter(this, allWorkout);
+        }
 
         this.setListAdapter(adapter);
         this.listViewWorkout.setTextFilterEnabled(true);
