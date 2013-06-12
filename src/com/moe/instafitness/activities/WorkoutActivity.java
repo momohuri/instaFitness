@@ -18,6 +18,10 @@ import com.moe.instafitness.R;
 import com.moe.instafitness.R.id;
 import com.moe.instafitness.database.InstaFitnessDatabase;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,6 +32,7 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
      Button toHard;
      CountDownTimer  myTimmer;
      Cursor workout;
+     String workoutId;
     InstaFitnessDatabase instaFitnessDatabase = InstaFitnessDatabase.getInstance(getBaseContext());
 
     @Override
@@ -51,10 +56,11 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
 		 if(extra.get("firstTest") != null){
 			Toast toast = Toast.makeText(getBaseContext(), extra.get("grade").toString(), Toast.LENGTH_SHORT);
 			 toast.show();
-             workout = instaFitnessDatabase.getWorkout(extra.get("firstTest").toString());
+             workoutId = extra.get("firstTest").toString();
+             workout = instaFitnessDatabase.getWorkout(workoutId);
 		 }else{
-             String id = extra.getString("exerciseId");
-             workout = instaFitnessDatabase.getWorkout(id);
+             workoutId = extra.getString("exerciseId");
+             workout = instaFitnessDatabase.getWorkout(workoutId);
 		 }
 
         final TextView title = (TextView) findViewById(R.id.WorkoutTitle);
@@ -192,6 +198,19 @@ public class WorkoutActivity extends Activity implements View.OnClickListener {
                 Map<String, String> personalInfo  = new HashMap<String, String>();
                 personalInfo.put("grade", String.valueOf(grade));
                 instaFitnessDatabase.updatePersonalInfo(personalInfo);
+//                "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , " +
+//                        "id_workout INTEGER NOT NULL, " +
+//                        "note INTEGER, " +
+//                        "timestamp DATETIME);",
+                Map<String, String> difficultyInfo =  new HashMap<String,String>();
+                difficultyInfo.put("id_workout",workoutId);
+                difficultyInfo.put("note", String.valueOf(difficulty));
+                DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+                Date today = Calendar.getInstance().getTime();
+                String reportDate = df.format(today);
+                difficultyInfo.put("timestamp",reportDate);
+                instaFitnessDatabase.insertDifficulty(difficultyInfo);
+
             }
             finish();
         }

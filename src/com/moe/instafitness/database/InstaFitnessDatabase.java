@@ -317,15 +317,14 @@ public class InstaFitnessDatabase {
          */
         public long insertDifficulty(Map<String,String> difficulty) {
             mDatabase = this.getWritableDatabase();
-            ContentValues personalInfoValues = new ContentValues();
+            ContentValues difficultyValues = new ContentValues();
 
             for (Map.Entry<String, String> entry : difficulty.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                personalInfoValues.put(key, value);
+                difficultyValues.put(key, value);
             }
-
-            return mDatabase.insertOrThrow(PERSONAL_INFO_TABLE_NAME, null, personalInfoValues);
+            return mDatabase.insertOrThrow(PERSONAL_INFO_TABLE_NAME, null, difficultyValues);
         }
 
         /**
